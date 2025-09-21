@@ -27,6 +27,7 @@
     <section class="haider">
         <div class="container">
             <div class="haider__content">
+                <div class="me-auto">Дата обновления данных: <span id="server-date">{{ now()->format('Y-m-d H:i:s') }}</span></div>
                 <div class="haider_name" id="haiderName">Чепурнов В.</div>
                 {{--                <form>--}}
                 {{--                    <select class="haider_select__name" id="selectName">--}}

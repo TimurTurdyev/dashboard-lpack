@@ -43,6 +43,9 @@ class DashboardController extends Controller
             $response = Http::withBody(json_encode($credentials))->get(config('main.crm_server') . '/widgets_json');
         }
 
-        return $response->json('widgets');
+        return [
+            'serverDate' => now()->format('Y-m-d H:i:s'),
+            'crmData' => $response->json('widgets', []),
+        ];
     }
 }

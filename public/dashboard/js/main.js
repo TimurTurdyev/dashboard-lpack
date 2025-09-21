@@ -480,7 +480,11 @@ $(document).ready(function () {
             data: {}, // Data to send
             dataType: 'json', // Expected data type from the server
             success: function (json) {
-                $.each(json, function (index, row) {
+                $('#server-date').text(json.serverDate);
+
+                $('#error').hide().find('pre').text('');
+
+                $.each(json.crmData, function (index, row) {
                     const group = row.Name.trim();
                     const $element = $(`[data-group="${group}"]`);
 
@@ -491,7 +495,7 @@ $(document).ready(function () {
                         });
                         return;
                     }
-                    $('#error').hide().find('pre').text('');
+
                     console.info(row);
                     const currentChart = ctxElements[group];
                     if (currentChart) {
@@ -511,7 +515,7 @@ $(document).ready(function () {
             error: function (xhr, status, error) {
                 // Handle errors
                 console.error(xhr.responseText);
-                $('#error').show().find('pre').append(JSON.stringify(row, null, 2));
+                $('#error').show().find('pre').append(xhr.responseText);
                 setTimeout(function () {
                     setData();
                 }, 1000 * 10);
