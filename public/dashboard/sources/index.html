@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter&family=Nunito+Sans&family=Rubik&family=DM+Sans&display=swap"
+        rel="stylesheet">
+
+
+    <!-- CHARTJS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.css">
+
+
+    <!-- Nice Select CSS -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
+
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+<div class="wrapper">
+
+    <!-- HEADER -->
+    <section class="haider">
+        <div class="container">
+            <div class="haider__content">
+                <div class="haider_name" id="haiderName">Хохлов В.</div>
+                <form>
+                    <select class="haider_select__name" id="selectName">
+                        <option>Менеджер</option>
+                        <option selected>Хохлов В.</option>
+                        <option>Чепурнов В.</option>
+                    </select>
+                    <select class="haider_select__time">
+                        <option>День</option>
+                        <option>Неделя</option>
+                        <option>Месяц</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- GENERAL DATA -->
+    <section class="general_data">
+        <div class="container">
+            <div class="general_data_row">
+                <!-- general_item -->
+                <div class="general_item">
+                    <div class="top">
+                        <img src="assets/imges/general_data_icon1.png" alt="">
+                        <div class="title">В воронке</div>
+                    </div>
+                    <div class="bottom">
+                        <div class="data">1,14 млн</div>
+                        <div class="quantity">69 шт</div>
+                    </div>
+                </div>
+                <!-- general_item -->
+                <div class=" general_item">
+                    <div class="top">
+                        <img src="assets/imges/general_data_icon2.png" alt="">
+                        <div class="title">Закрыто</div>
+                    </div>
+                    <div class="bottom">
+                        <div class="data">14,57</div>
+                        <div class="quantity">549 шт</div>
+                    </div>
+                </div>
+                <!-- general_item -->
+                <div class=" general_item">
+                    <div class="top">
+                        <img src="assets/imges/general_data_icon3.png" alt="">
+                        <div class="title">План выставления счетов за год</div>
+                    </div>
+                    <div class="bottom">
+                        <div class="data">35%</div>
+                        <div class="quantity">16мл/47 мл</div>
+                    </div>
+                </div>
+                <!-- general_item -->
+                <div class=" general_item">
+                    <div class="top">
+                        <img src="assets/imges/general_data_icon4.png" alt="">
+                        <div class="title">Средний чек</div>
+                    </div>
+                    <div class="bottom">
+                        <div class="data">27,04 тыс</div>
+                        <div class="quantity"></div>
+                    </div>
+                </div>
+                <!-- general_item -->
+                <div class=" general_item">
+                    <div class="top">
+                        <img src="assets/imges/general_data_icon5.png" alt="">
+                        <div class="title">Конверсия за год</div>
+                    </div>
+                    <div class="bottom">
+                        <div class="data">19,93%</div>
+                        <div class="quantity">282 шт / 1 415 шт</div>
+                    </div>
+                </div>
+                <!-- general_item -->
+                <div class="general_item">
+                    <div class="top">
+                        <img src="assets/imges/general_data_icon6.png" alt="">
+                        <div class="title">Среднее время</div>
+                    </div>
+                    <div class="bottom">
+                        <div class="data">5 дней</div>
+                        <div class="quantity"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHART SECTION -->
+    <section class="chart-section">
+        <div class="container">
+            <div class="legend">
+                <div class="title"> Сумма продаж по месяцам</div>
+                <div class="border"></div>
+                <div class="group">
+                    <div id="toggle-this-year">
+                        <span class="dot this-year"></span>Этот год
+                    </div>
+                    <div id="toggle-last-year">
+                        <span class="dot last-year"></span>Прошлый год
+                    </div>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="salesChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- BAR -->
+    <section class="bar">
+        <div class="container">
+            <div class="legend">
+                <div class="title"> Kоличество выставленных счетов</div>
+                <div class="border"></div>
+                <div class="group">
+                    <div id="toggle-this-year">
+                        <span class="dot last-year"></span>Прошлый год
+
+                    </div>
+                    <div id="toggle-last-year">
+                        <span class="dot this-year"></span>Этот год
+                    </div>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARD ITEM -->
+    <section class="card_item">
+        <div class="container">
+            <div class="card_item_start">
+                <div class="card">
+                    <div class="card_title"><img src="assets/imges/card_title_img.svg" alt="">Создано счетов
+                    </div>
+                    <div class="card_text">
+                        <div class="left">46 <img src="assets/imges/card_text_left_img.svg" alt=""></div>
+                        <div class="right">
+                            План<span>100</span>
+                        </div>
+                    </div>
+                    <div class="card_bottom">
+                        <div class="left">Компания:<span>81</span></div>
+                        <div class="right">-61%</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_title"><img src="assets/imges/card_title_img2.svg" alt="">Сумма счетов
+                    </div>
+                    <div class="card_text">
+                        <div class="left">0,3 мл <img src="assets/imges/card_text_left_img2.svg" alt=""></div>
+                        <div class="right">
+                            План<span>15 мл</span>
+                        </div>
+                    </div>
+                    <div class="card_bottom">
+                        <div class="left">Компания:<span>81</span></div>
+                        <div class="right green">+105%</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_title"><img src="assets/imges/card_title_img3.svg" alt="">Обработано заявок
+                    </div>
+                    <div class="card_text">
+                        <div class="left">5 <img src="assets/imges/card_text_left_img3.svg" alt=""></div>
+                        <div class="right ">
+                            План<span>150</span>
+                        </div>
+                    </div>
+                    <div class="card_bottom">
+                        <div class="left">Компания:<span>81</span></div>
+                        <div class="right yellow">78%</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_title"><img src="assets/imges/card_title_img4.svg" alt="">Конверсия, %
+                    </div>
+                    <div class="card_text">
+                        <div class="left">5 <img src="assets/imges/card_text_left_img3.svg" alt=""></div>
+                        <div class="right ">
+                            План<span>150</span>
+                        </div>
+                    </div>
+                    <div class="card_bottom">
+                        <div class="left">Компания:<span>81</span></div>
+                        <div class="right yellow">78%</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_title"><img src="assets/imges/card_title_img5.svg" alt="">Исходящие звонки
+                    </div>
+                    <div class="card_text">
+                        <div class="left">15 <img src="assets/imges/card_text_left_img.svg" alt=""></div>
+                        <div class="right">
+                            План<span>30</span>
+                        </div>
+                    </div>
+                    <div class="card_bottom">
+                        <div class="left">Компания:<span>81</span></div>
+                        <div class="right">-12%</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_title"><img src="assets/imges/card_title_img6.svg" alt="">Исходящие e-mails
+                    </div>
+                    <div class="card_text">
+                        <div class="left">46 <img src="assets/imges/card_text_left_img.svg" alt=""></div>
+                        <div class="right">
+                            План<span>100</span>
+                        </div>
+                    </div>
+                    <div class="card_bottom">
+                        <div class="left">Компания:<span>81</span></div>
+                        <div class="right">-61%</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_title"><img src="assets/imges/card_title_img7.svg" alt="">Сообщения в
+                        WatsApp сегодня
+                    </div>
+                    <div class="card_text">
+                        <div class="left">20 <img src="assets/imges/card_text_left_img.svg" alt=""></div>
+                        <div class="right">
+                            План<span>30</span>
+                        </div>
+                    </div>
+                    <div class="card_bottom">
+                        <div class="left">Компания:<span>81</span></div>
+                        <div class="right">-3</div>
+                    </div>
+                </div>
+                <div class="card end">
+                    <div class="card_title">Прогресс за день</div>
+                    <div class="card_text">
+                        <div class="card_img">
+                            <img src="assets/imges/card_end_img.svg" alt="">
+                        </div>
+                        <div class="card_element">
+                            <img src="assets/imges/card_end_img_2.svg" alt="">Средний день 👌
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIMENT RESULTS -->
+    <section class="experiment_results">
+        <div class="container">
+            <div class="experiment_results_start">
+                <h2>Менеджеры</h2>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Сотрудник</th>
+                        <th>Создано счетов</th>
+                        <th>Сумма счетов</th>
+                        <th>Исходящие звонки</th>
+                        <th>Исходящие e-mails</th>
+                        <th>Сообщения в WatsApp</th>
+                        <th>Конверсия, %</th>
+                    </tr>
+
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="name">1 <span>Хохлов В.</span></td>
+                        <td>
+                            <div class="td-content">
+                                <div class="top">
+                                    8
+                                    <img src="assets/imges/card_text_left_img.svg" alt="">
+                                </div>
+                                <p>190 <span>-12%</span></p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-content">
+                                <div class="top">
+                                    0,3 мл
+                                    <img src="assets/imges/card_text_left_img.svg" alt="">
+                                </div>
+                                <p>5 мл <span>-12%</span></p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-content">
+                                <div class="top">
+                                    30
+                                    <img src="assets/imges/card_text_left_img.svg" alt="">
+                                </div>
+                                <p>60 <span>-12%</span></p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-content">
+                                <div class="top">
+                                    46
+                                    <img src="assets/imges/card_text_left_img.svg" alt="">
+                                </div>
+                                <p>60<span>-12%</span></p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-content watsapp">
+                                15
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-content">
+                                <div class="top">
+                                    5
+                                    <img src="assets/imges/card_text_left_img.svg" alt="">
+                                </div>
+                                <p>20 <span>-12%</span></p>
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="name"> 2 <span>Чепурнов В.</span></td>
+                        <td>
+                            <div class="td-content">
+                                <div class="top">
+                                    5
+                                    <img src="assets/imges/card_text_left_img.svg" alt="">
+                                </div>
+                                <p>190 <span>-12%</span></p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-content">
+                                <div class="top">
+                                    0,3 мл
+                                    <img src="assets/imges/card_text_left_img.svg" alt="">
+                                </div>
+                                <p>5 мл <span>-12%</span></p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-content">
+                                <div class="top">
+                                    30
+                                    <img src="assets/imges/card_text_left_img.svg" alt="">
+                                </div>
+                                <p>60 <span>-12%</span></p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-content">
+                                <div class="top">
+                                    34
+                                    <img src="assets/imges/card_text_left_img.svg" alt="">
+                                </div>
+                                <p>60 <span>-12%</span></p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-content watsapp">
+                                30
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-content">
+                                <div class="top">
+                                    5
+                                    <img src="assets/imges/card_text_left_img.svg" alt="">
+                                </div>
+                                <p>20 <span>-12%</span></p>
+                            </div>
+                        </td>
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- MIXED CHARTS -->
+    <section class="mixed_charts">
+        <div class="container">
+            <div class="chart_row">
+                <div class="chart_item">
+                    <div class="title add">Конверсия по месяцам</div>
+                    <canvas id="myLineChart"></canvas>
+                </div>
+                <div class="chart_item">
+                    <div class="group">
+                        <div class="title">Кол-во выставленных счетов за месяц</div>
+                        <select id="month-select">
+                            <option value="0">Январь</option>
+                            <option value="1">Февраль</option>
+                            <option value="2">Март</option>
+                            <option value="3" selected>Апрель</option>
+                            <option value="4">Май</option>
+                            <option value="5">Июнь</option>
+                            <option value="6">Июль</option>
+                            <option value="7">Август</option>
+                            <option value="8">Сентябрь</option>
+                            <option value="9">Октябрь</option>
+                            <option value="10">Ноябрь</option>
+                            <option value="11">Декабрь</option>
+                        </select>
+                    </div>
+
+                    <div class="canvas-item">
+                        <canvas id="invoiceChart" style="width: 660px;"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INCOME CHART -->
+    <section class="income_chart">
+        <div class="container">
+            <div class="legend_group">
+                <div class="legend">
+                    <div class="title"> Приход грязной прибыли по дням</div>
+                    <div class="border"></div>
+                    <div class="group">
+                        <div id="toggle-this-year">
+                            <span class="dot this-year"></span>Прошлый год
+                        </div>
+
+                        <div id="toggle-last-year">
+                            <span class="dot last-year "></span>Этот год
+                        </div>
+                    </div>
+                </div>
+
+                <div class="select_group">
+                    <select id="month-select">
+                        <option value="0">Январь</option>
+                        <option value="1">Февраль</option>
+                        <option value="2">Март</option>
+                        <option value="3" selected>Апрель</option>
+                        <option value="4">Май</option>
+                        <option value="5">Июнь</option>
+                        <option value="6">Июль</option>
+                        <option value="7">Август</option>
+                        <option value="8">Сентябрь</option>
+                        <option value="9">Октябрь</option>
+                        <option value="10">Ноябрь</option>
+                        <option value="11">Декабрь</option>
+                    </select>
+
+                    <select name="day" id="day-select">
+
+                        <option value="" selected disabled>День</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="profitChart"></canvas>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- JQUERY -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- CHARTJS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- CHARTJS DATALABELS PLUGIN -->
+<script src="assets/js/chartjs-plugin-datalabels.min.js"></script>
+<!-- JQUERY  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+<!-- BOOTSTRAP -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+<!-- MAIN JS -->
+<script src="assets/js/main.js"></script>
+</body>
+</html>
