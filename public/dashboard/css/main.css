@@ -146,7 +146,7 @@ section {
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .card_item .card_item_start {
         justify-content: center;
     }
@@ -173,7 +173,7 @@ section {
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .card_item .card {
         width: calc(50% - 9px);
     }
@@ -598,7 +598,7 @@ section {
     background: var(--Gray-Light-1, #F4F5F9);
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .general_data .general_data_row .general_item {
         width: calc(50% - 6px);
     }
