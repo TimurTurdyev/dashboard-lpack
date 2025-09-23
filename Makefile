@@ -25,8 +25,8 @@ update: ## Git pull and update dependencies
 		echo "COMMIT_HASH=$(COMMIT_HASH)" >> .env; \
 	fi
 	$(COMPOSER_BIN) install --no-dev
-	$(PHP_BIN) $(FRONT_PATH)/artisan optimize:clear
-	$(PHP_BIN) $(FRONT_PATH)/artisan optimize
+	$(PHP_BIN) artisan optimize:clear
+	$(PHP_BIN) artisan optimize
 
 
 .PHONY: help
