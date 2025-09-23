@@ -2,11 +2,16 @@ $(document).ready(function () {
     $('select').niceSelect();
 
     const ctxElements = {
-        'Отгруженные заказы за год': null,
-        'Кол-во выставленных счетов': null,
-        'Конверсия по месяцам': null,
-        'Динамика клиентской базы': null,
+        'e4854dd8-163e-11f0-a461-e848b8c82000': null,
+        '3ffd47f3-164c-11f0-a461-e848b8c82000': null,
+        '345e2812-16d3-11f0-a462-e848b8c82000': null,
+        '2281f922-7e4a-11f0-a47c-e848b8c82000': null,
     };
+
+    const icons = {
+        up: 'dashboard/images/arrow-up.svg',
+        down: 'dashboard/images/arrow-down.svg',
+    }
 
 // media
     const isBigTab = window.innerWidth <= 1200;
@@ -14,7 +19,7 @@ $(document).ready(function () {
 //
     const ctx = document.getElementById("salesChart").getContext("2d");
 
-    ctxElements['Отгруженные заказы за год'] = new Chart(ctx, {
+    ctxElements['e4854dd8-163e-11f0-a461-e848b8c82000'] = new Chart(ctx, {
         type: "line",
         data: {
             labels: [
@@ -130,7 +135,7 @@ $(document).ready(function () {
 // bar chart
     const ctbx = document.getElementById('myChart').getContext('2d');
 
-    ctxElements['Кол-во выставленных счетов'] = new Chart(ctbx, {
+    ctxElements['3ffd47f3-164c-11f0-a461-e848b8c82000'] = new Chart(ctbx, {
         type: 'bar',
         data: {
             labels: [
@@ -205,7 +210,7 @@ $(document).ready(function () {
 // second line chart(single)
     const cx = document.getElementById('myLineChart').getContext('2d');
 
-    ctxElements['Конверсия по месяцам'] = new Chart(cx, {
+    ctxElements['345e2812-16d3-11f0-a462-e848b8c82000'] = new Chart(cx, {
         type: 'line',
         data: {
             labels: ['Янв.', 'Февр.', 'Март', 'Апр.', 'Май', 'Июн', 'Июль', 'Авг.', 'Сент.', 'Окт.', 'Нояб.', 'Дек.'],
@@ -378,7 +383,7 @@ $(document).ready(function () {
 //   profit line chart(last)
     const main = document.getElementById('profitChart').getContext('2d');
 
-    ctxElements['Динамика клиентской базы'] = new Chart(main, {
+    ctxElements['2281f922-7e4a-11f0-a47c-e848b8c82000'] = new Chart(main, {
         type: "line",
         type: 'bar',
         data: {
@@ -473,6 +478,43 @@ $(document).ready(function () {
         $('#haiderName').text($(this).val());
     });
 
+    const tableRow = `<td class="name">{index} <span>{User}</span></td>
+                        <td>
+                            <div class="td-content">
+                                <div class="top">
+                                    {Value}
+                                    <img data-key="indicator" src="{indicator}" alt="">
+                                </div>
+                                <p>{Plan} <span>-12%</span></p>
+                            </div>
+                        </td>`;
+
+    function generateTableRows(values) {
+        let tr = $('#rowTable').text();
+        let results = '';
+
+        $.each(values, function (index, value) {
+            let trCopy = tr;
+
+            trCopy = trCopy.replace('{index}', index + 1).replace('{User}', value.User);
+
+            $.each(value.Data, function (i, row) {
+                let icon = icons[row.indicator] ?? icons.up;
+                console.log(icon)
+                trCopy = trCopy
+                    .replace(`{indicator${i}}`, icon)
+                    .replace(`{Value${i}}`, row.Value)
+                    .replace(`{Plan${i}}`, row.Plan)
+                    .replace(`{Percent${i}}`, row.Percent)
+                ;
+            });
+
+            results += trCopy;
+        });
+
+        return results;
+    }
+
     function setData() {
         $.ajax({
             url: 'crm/dashboard-data', // Example URL for admin panel
@@ -485,19 +527,53 @@ $(document).ready(function () {
                 $('#error').hide().find('pre').text('');
 
                 $.each(json.crmData, function (index, row) {
-                    const group = row.Name.trim();
-                    const $element = $(`[data-group="${group}"]`);
+                    const id = row.id;
+                    const $element = $(`[data-id="${id}"]`);
+
+                    const currentChart = ctxElements[id];
+
+                    row.Name = row.Name.trim();
 
                     if ($element.length) {
+                        console.log(id);
+                        if (id === 'db18260b-1fa3-11f0-a467-e848b8c82000') {
+                            $element.find('[data-key="Name"]').text(row.Name);
+                            const tr = generateTableRows(row.Value);
+
+                            $element.find('tbody').html(tr);
+                            return;
+                        }
+
                         $element.find('[data-key]').each(function (i, el) {
                             const key = $(el).data('key');
+                            if (key === 'indicator') {
+                                const icon = row[key];
+
+                                $(el).hide();
+
+                                if (!icon) {
+                                    return;
+                                }
+
+                                if (icons[icon]) {
+                                    $(el).show();
+                                    $(el).attr('src', icons[icon]);
+                                }
+
+                                if (icon === 'up') {
+                                    $element.find('[data-key="Percent"]').addClass('text-success');
+                                } else {
+                                    $element.find('[data-key="Percent"]').removeClass('text-success');
+                                }
+
+                                return;
+                            }
                             $(el).text(row[key]);
                         });
-                        return;
                     }
 
                     console.info(row);
-                    const currentChart = ctxElements[group];
+
                     if (currentChart) {
                         console.info(currentChart.data.datasets)
 
