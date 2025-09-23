@@ -8,7 +8,7 @@
     <base href="{{ asset('/') }}">
 
     <!-- Bootstrap CSS -->
-    <link href="{{ asset('dashboard/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('dashboard/bootstrap.min.css') }}?ver={{ config('main.commit_hash') }}" rel="stylesheet">
     <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter&family=Nunito+Sans&family=Rubik&family=DM+Sans&display=swap"
@@ -16,9 +16,9 @@
     <!-- CHARTJS CSS -->
     {{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.css">--}}
     <!-- Nice Select CSS -->
-    <link rel="stylesheet" href="{{ asset('dashboard/nice-select.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/nice-select.min.css') }}?ver={{ config('main.commit_hash') }}">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ asset('dashboard/css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/css/main.css') }}?ver={{ config('main.commit_hash') }}">
 </head>
 
 <body>
@@ -590,16 +590,16 @@
     </tr>
 </script>
 <!-- JQUERY -->
-<script src="{{ asset('dashboard/jquery-3.6.0.min.js') }}"></script>
+<script src="{{ asset('dashboard/jquery-3.6.0.min.js') }}?ver={{ config('main.commit_hash') }}"></script>
 <!-- CHARTJS -->
-<script src="{{ asset('dashboard/chart.js') }}"></script>
+<script src="{{ asset('dashboard/chart.js') }}?ver={{ config('main.commit_hash') }}"></script>
 <!-- CHARTJS DATALABELS PLUGIN -->
-<script src="{{ asset('dashboard/js/chartjs-plugin-datalabels.min.js') }}"></script>
+<script src="{{ asset('dashboard/js/chartjs-plugin-datalabels.min.js') }}?ver={{ config('main.commit_hash') }}"></script>
 <!-- JQUERY  -->
-<script src="{{ asset('dashboard/jquery.nice-select.min.js') }}"></script>
+<script src="{{ asset('dashboard/jquery.nice-select.min.js') }}?ver={{ config('main.commit_hash') }}"></script>
 <!-- BOOTSTRAP -->
-<script src="{{ asset('dashboard/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('dashboard/bootstrap.bundle.min.js') }}?ver={{ config('main.commit_hash') }}"></script>
 <!-- MAIN JS -->
-<script src="{{ asset('dashboard/js/main.js') }}"></script>
+<script src="{{ asset('dashboard/js/main.js') }}?ver={{ config('main.commit_hash') }}"></script>
 </body>
 </html>
