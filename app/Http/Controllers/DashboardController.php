@@ -49,11 +49,7 @@ class DashboardController extends Controller
             ])->withBody(json_encode($credentials))->get(config('main.crm_server') . '/widgets_json');
         }
 
-        if ($debug) {
-            return $response->body();
-        }
-
-        if ($response->failed()) {
+        if ($response->failed() || $debug) {
             $dateTime = now()->format('Y/m/d H:i:s');
             $message = [
                 "[$dateTime]CRM URL: " . config('main.crm_server') . '/widgets_json',
