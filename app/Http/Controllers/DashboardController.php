@@ -41,7 +41,7 @@ class DashboardController extends Controller
             'debug' => $debug,
         ])->withBody(json_encode($credentials))->get(config('main.crm_server') . '/widgets_json');
 
-        if ($response->status() === 422) {
+        if ($response->status() !== 200) {
             $credentials = $this->crmLogin();
             session()->put('credentials', $credentials);
             $response = Http::withOptions([
@@ -49,7 +49,7 @@ class DashboardController extends Controller
             ])->withBody(json_encode($credentials))->get(config('main.crm_server') . '/widgets_json');
         }
 
-        if ($response->failed() || $debug) {
+        if ($debug || $response->failed()) {
             $dateTime = now()->format('Y/m/d H:i:s');
             $message = [
                 "[$dateTime]CRM URL: " . config('main.crm_server') . '/widgets_json',
