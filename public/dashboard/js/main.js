@@ -583,7 +583,7 @@ $(document).ready(function () {
             error: function (xhr, status, error) {
                 // Handle errors
                 console.error(xhr.responseText);
-                $('#error').show().find('pre').append(xhr.responseText);
+                $('#error').show().find('pre').prepend(xhr.responseText);
                 setTimeout(function () {
                     setData();
                 }, 1000 * 10);
