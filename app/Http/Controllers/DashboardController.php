@@ -44,10 +44,11 @@ class DashboardController extends Controller
         }
 
         if ($response->failed()) {
+            $dateTime = now()->format('Y/m/d H:i:s');
             $message = [
-                "CRM URL: " . config('main.crm_server') . '/widgets_json',
-                "CREDENTIAL: " . json_encode($credentials, JSON_UNESCAPED_UNICODE, JSON_UNESCAPED_SLASHES),
-                "CRM server: " . $response->status() . " / Body: " . $response->body() . PHP_EOL . PHP_EOL
+                "[$dateTime]CRM URL: " . config('main.crm_server') . '/widgets_json',
+                "[$dateTime]CREDENTIAL: " . json_encode($credentials, JSON_UNESCAPED_UNICODE, JSON_UNESCAPED_SLASHES),
+                "[$dateTime]CRM server: " . $response->status() . " / Body: " . $response->body() . PHP_EOL . PHP_EOL
             ];
             return response(implode(PHP_EOL, $message), 500);
         }
