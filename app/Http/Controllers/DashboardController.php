@@ -45,7 +45,7 @@ class DashboardController extends Controller
         }
 
         if ($response->failed()) {
-            return response("CRM server: " . $response->status() . " / Body: " . $response->body(), 500);
+            return response("CRM server: " . $response->status() . " / Body: " . $response->body() . PHP_EOL, 500);
         }
 
         return response([
