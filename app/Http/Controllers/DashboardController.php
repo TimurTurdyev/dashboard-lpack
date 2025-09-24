@@ -35,12 +35,22 @@ class DashboardController extends Controller
             session()->put('credentials', $credentials);
         }
 
-        $response = Http::withBody(json_encode($credentials))->get(config('main.crm_server') . '/widgets_json');
+        $debug = (bool)request()->input('debug', false);
+
+        $response = Http::withOptions([
+            'debug' => $debug,
+        ])->withBody(json_encode($credentials))->get(config('main.crm_server') . '/widgets_json');
 
         if ($response->status() === 422) {
             $credentials = $this->crmLogin();
             session()->put('credentials', $credentials);
-            $response = Http::withBody(json_encode($credentials))->get(config('main.crm_server') . '/widgets_json');
+            $response = Http::withOptions([
+                'debug' => $debug,
+            ])->withBody(json_encode($credentials))->get(config('main.crm_server') . '/widgets_json');
+        }
+
+        if ($debug) {
+            return $response->body();
         }
 
         if ($response->failed()) {
