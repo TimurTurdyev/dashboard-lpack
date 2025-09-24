@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Storage;
 
 class DashboardController extends Controller
 {
@@ -45,7 +44,12 @@ class DashboardController extends Controller
         }
 
         if ($response->failed()) {
-            return response("CRM server: " . $response->status() . " / Body: " . $response->body() . PHP_EOL, 500);
+            $message = [
+                "CRM URL: " . config('main.crm_server') . '/widgets_json',
+                "CREDENTIAL: " . json_encode($credentials, JSON_UNESCAPED_UNICODE, JSON_UNESCAPED_SLASHES),
+                "CRM server: " . $response->status() . " / Body: " . $response->body() . PHP_EOL . PHP_EOL
+            ];
+            return response(implode(PHP_EOL, $message), 500);
         }
 
         return response([
