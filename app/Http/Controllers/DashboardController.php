@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardController extends Controller
 {
@@ -43,9 +44,13 @@ class DashboardController extends Controller
             $response = Http::withBody(json_encode($credentials))->get(config('main.crm_server') . '/widgets_json');
         }
 
-        return [
+        if ($response->failed()) {
+            return response($response->body(), $response->status());
+        }
+
+        return response([
             'serverDate' => now()->format('Y-m-d H:i:s'),
             'crmData' => $response->json('widgets', []),
-        ];
+        ]);
     }
 }

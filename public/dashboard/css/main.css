@@ -88,7 +88,7 @@ section {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 42px;
+    gap: 1.5rem;
     flex-wrap: wrap;
 }
 

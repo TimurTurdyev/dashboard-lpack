@@ -27,6 +27,18 @@
     <section class="haider">
         <div class="container">
             <div class="haider__content">
+                <button class="btn btn-light btn-sm" id="fill-screen">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none"
+                         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                        <path
+                            d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none"
+                         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="display: none;">
+                        <path
+                            d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"></path>
+                    </svg>
+                </button>
                 <div class="me-auto">
                     Дата обновления данных:
                     <span id="server-date">{{ now()->format('Y-m-d H:i:s') }}</span>
@@ -541,36 +553,36 @@
             <div class="td-content">
                 <div class="top">
                     {Value0}
-                    <img src="{indicator0}" alt="">
+                    <img class="{PlanClass0}" src="{indicator0}" alt="">
                 </div>
-                <p>{Plan0} <span>{Percent0}</span></p>
+                <p class="{PlanClass0}">{Plan0} <span class="{PercentClass0}">{Percent0}</span></p>
             </div>
         </td>
         <td>
             <div class="td-content">
                 <div class="top">
                     {Value1}
-                    <img src="{indicator1}" alt="">
+                    <img class="{PlanClass1}" src="{indicator1}" alt="">
                 </div>
-                <p>{Plan1} <span>{Percent1}</span></p>
+                <p class="{PlanClass1}">{Plan1} <span class="{PercentClass1}">{Percent1}</span></p>
             </div>
         </td>
         <td>
             <div class="td-content">
                 <div class="top">
                     {Value2}
-                    <img src="{indicator2}" alt="">
+                    <img class="{PlanClass2}" src="{indicator2}" alt="">
                 </div>
-                <p>{Plan2} <span>{Percent2}</span></p>
+                <p class="{PlanClass2}">{Plan2} <span class="{PercentClass2}">{Percent2}</span></p>
             </div>
         </td>
         <td>
             <div class="td-content">
                 <div class="top">
                     {Value3}
-                    <img src="{indicator3}" alt="">
+                    <img class="{PlanClass3}" src="{indicator3}" alt="">
                 </div>
-                <p>{Plan3} <span>{Percent3}</span></p>
+                <p class="{PlanClass3}">{Plan3} <span class="{PercentClass3}">{Percent3}</span></p>
             </div>
         </td>
         <td>
@@ -582,9 +594,9 @@
             <div class="td-content">
                 <div class="top">
                     {Value5}
-                    <img src="{indicator5}" alt="">
+                    <img class="{PlanClass5}" src="{indicator5}" alt="">
                 </div>
-                <p>{Plan5} <span>{Percent5}</span></p>
+                <p class="{PlanClass5}">{Plan5} <span class="{PercentClass5}">{Percent5}</span></p>
             </div>
         </td>
     </tr>
@@ -594,11 +606,13 @@
 <!-- CHARTJS -->
 <script src="{{ asset('dashboard/chart.js') }}?ver={{ config('main.commit_hash') }}"></script>
 <!-- CHARTJS DATALABELS PLUGIN -->
-<script src="{{ asset('dashboard/js/chartjs-plugin-datalabels.min.js') }}?ver={{ config('main.commit_hash') }}"></script>
+<script
+    src="{{ asset('dashboard/js/chartjs-plugin-datalabels.min.js') }}?ver={{ config('main.commit_hash') }}"></script>
 <!-- JQUERY  -->
 <script src="{{ asset('dashboard/jquery.nice-select.min.js') }}?ver={{ config('main.commit_hash') }}"></script>
 <!-- BOOTSTRAP -->
 <script src="{{ asset('dashboard/bootstrap.bundle.min.js') }}?ver={{ config('main.commit_hash') }}"></script>
+<script src="{{ asset('dashboard/screenfull.js') }}?ver={{ config('main.commit_hash') }}"></script>
 <!-- MAIN JS -->
 <script src="{{ asset('dashboard/js/main.js') }}?ver={{ config('main.commit_hash') }}"></script>
 </body>

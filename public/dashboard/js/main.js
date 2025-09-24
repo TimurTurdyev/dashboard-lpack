@@ -478,17 +478,6 @@ $(document).ready(function () {
         $('#haiderName').text($(this).val());
     });
 
-    const tableRow = `<td class="name">{index} <span>{User}</span></td>
-                        <td>
-                            <div class="td-content">
-                                <div class="top">
-                                    {Value}
-                                    <img data-key="indicator" src="{indicator}" alt="">
-                                </div>
-                                <p>{Plan} <span>-12%</span></p>
-                            </div>
-                        </td>`;
-
     function generateTableRows(values) {
         let tr = $('#rowTable').text();
         let results = '';
@@ -500,9 +489,12 @@ $(document).ready(function () {
 
             $.each(value.Data, function (i, row) {
                 let icon = icons[row.indicator] ?? icons.up;
-                console.log(icon)
+                let percentClass = row.indicator === 'up' ? 'text-success' : '';
+                let planClass = row.Plan === 0 && row.Percent === 0 ? 'd-none' : '';
                 trCopy = trCopy
                     .replace(`{indicator${i}}`, icon)
+                    .replaceAll(`{PlanClass${i}}`, planClass)
+                    .replace(`{PercentClass${i}}`, percentClass)
                     .replace(`{Value${i}}`, row.Value)
                     .replace(`{Plan${i}}`, row.Plan)
                     .replace(`{Percent${i}}`, row.Percent)
@@ -533,6 +525,8 @@ $(document).ready(function () {
                     const currentChart = ctxElements[id];
 
                     row.Name = row.Name.trim();
+
+                    console.info(row);
 
                     if ($element.length) {
                         console.log(id);
@@ -572,8 +566,6 @@ $(document).ready(function () {
                         });
                     }
 
-                    console.info(row);
-
                     if (currentChart) {
                         console.info(currentChart.data.datasets)
 
@@ -600,5 +592,25 @@ $(document).ready(function () {
     }
 
     setData();
+
+   if (screenfull.isEnabled) {
+       $('#fill-screen svg:first').show();
+       $('#fill-screen svg:last').hide();
+
+       $('#fill-screen').on('click', function (event) {
+           event.preventDefault();
+           screenfull.toggle();
+       });
+
+       screenfull.on('change', () => {
+           if (screenfull.isFullscreen) {
+               $('#fill-screen svg:first').hide();
+               $('#fill-screen svg:last').show();
+           } else {
+               $('#fill-screen svg:first').show();
+               $('#fill-screen svg:last').hide();
+           }
+       });
+   }
 });
 
