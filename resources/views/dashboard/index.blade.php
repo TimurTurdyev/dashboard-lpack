@@ -64,7 +64,9 @@
         <div class="container">
             <div class="alert alert-danger" id="error" style="display: none;">
                 <h3>Лог ошибок:</h3>
-                <pre></pre>
+                <div style="max-height: 500px; overflow-y: scroll;">
+                    <pre></pre>
+                </div>
             </div>
             <div class="general_data_row">
                 <!-- general_item -->
