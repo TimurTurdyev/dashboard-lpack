@@ -296,7 +296,7 @@
                     <div class="mixed_charts">
                         <div class="chart_item">
                             <div class="group">
-                                <div class="title">График 2</div>
+                                <div class="title">График 5</div>
                                 <select id="month-select">
                                     <option value="0">Январь</option>
                                     <option value="1">Февраль</option>
