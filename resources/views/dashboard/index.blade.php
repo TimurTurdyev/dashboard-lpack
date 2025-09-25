@@ -34,7 +34,8 @@
                             d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
                     </svg>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none"
-                         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="display: none;">
+                         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                         style="display: none;">
                         <path
                             d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"></path>
                     </svg>
@@ -44,17 +45,6 @@
                     <span id="server-date">{{ now()->format('Y-m-d H:i:s') }}</span>
                 </div>
                 <div class="haider_name" id="haiderName">Чепурнов В.</div>
-                {{--                <form>--}}
-                {{--                    <select class="haider_select__name" id="selectName">--}}
-                {{--                        <option>Менеджер</option>--}}
-                {{--                        <option selected>Чепурнов В.</option>--}}
-                {{--                    </select>--}}
-                {{--                    <select class="haider_select__time">--}}
-                {{--                        <option>День</option>--}}
-                {{--                        <option>Неделя</option>--}}
-                {{--                        <option>Месяц</option>--}}
-                {{--                    </select>--}}
-                {{--                </form>--}}
             </div>
         </div>
     </section>
@@ -171,45 +161,111 @@
             </div>
         </div>
     </section>
-
-    <!-- CHART SECTION -->
-    <section class="chart-section">
-        <div class="container" data-id="e4854dd8-163e-11f0-a461-e848b8c82000">
-            <div class="legend">
-                <div class="title" data-key="Name">Отгруженные заказы за год</div>
-                <div class="border"></div>
-                <div class="group">
-                    <div id="toggle-this-year">
-                        <span class="dot this-year"></span>Этот год
-                    </div>
-                    <div id="toggle-last-year">
-                        <span class="dot last-year"></span>Прошлый год
+    <section>
+        <div class="container">
+            <ul class="nav nav-underline mb-4">
+                <li class="nav-item" data-id="e4854dd8-163e-11f0-a461-e848b8c82000">
+                    <a class="nav-link active"
+                       data-bs-toggle="tab" data-bs-target="#tab-pane1" type="button" role="tab"
+                       aria-controls="tab-pane1" aria-selected="true"
+                       href="#" data-key="Name">График 1</a>
+                </li>
+                <li class="nav-item" data-id="3ffd47f3-164c-11f0-a461-e848b8c82000">
+                    <a class="nav-link"
+                       data-bs-toggle="tab" data-bs-target="#tab-pane2" type="button" role="tab"
+                       aria-controls="tab-pane2" aria-selected="false"
+                       href="#" data-key="Name">График 2</a>
+                </li>
+                <li class="nav-item" data-id="2281f922-7e4a-11f0-a47c-e848b8c82000">
+                    <a class="nav-link"
+                       data-bs-toggle="tab" data-bs-target="#tab-pane3" type="button" role="tab"
+                       aria-controls="tab-pane3" aria-selected="false"
+                       href="#" data-key="Name">График 3</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="tab-pane1" role="tabpanel"
+                     aria-labelledby="tab-1"
+                     tabindex="0">
+                    <!-- CHART SECTION -->
+                    <div class="chart-section">
+                        <div class="container-box" data-id="e4854dd8-163e-11f0-a461-e848b8c82000">
+                            <div class="legend">
+                                <div class="title" data-key="Name">График 1</div>
+                                <div class="border"></div>
+                                <div class="group">
+                                    <div>
+                                        <span class="dot this-year"></span>Этот год
+                                    </div>
+                                    <div>
+                                        <span class="dot last-year"></span>Прошлый год
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="salesChart"></canvas>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="chart-container">
-                <canvas id="salesChart"></canvas>
-            </div>
-        </div>
-    </section>
-
-    <!-- BAR -->
-    <section class="bar">
-        <div class="container" data-id="3ffd47f3-164c-11f0-a461-e848b8c82000">
-            <div class="legend">
-                <div class="title" data-key="Name">Kоличество выставленных счетов</div>
-                <div class="border"></div>
-                <div class="group">
-                    <div id="toggle-this-year">
-                        <span class="dot last-year"></span>Этот год
-                    </div>
-                    <div id="toggle-last-year">
-                        <span class="dot this-year"></span>Прошлый год
+                <div class="tab-pane fade" id="tab-pane2" role="tabpanel"
+                     aria-labelledby="tab-2"
+                     tabindex="0">
+                    <!-- BAR -->
+                    <div class="bar">
+                        <div class="container-box" data-id="3ffd47f3-164c-11f0-a461-e848b8c82000">
+                            <div class="legend">
+                                <div class="title" data-key="Name">График 2</div>
+                                <div class="border"></div>
+                                <div class="group">
+                                    <div>
+                                        <span class="dot last-year"></span>Этот год
+                                    </div>
+                                    <div>
+                                        <span class="dot this-year"></span>Прошлый год
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="myChart"></canvas>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="chart-container">
-                <canvas id="myChart"></canvas>
+                <div class="tab-pane fade" id="tab-pane3" role="tabpanel"
+                     aria-labelledby="tab-3"
+                     tabindex="0">
+                    <!-- INCOME CHART -->
+                    <div class="income_chart">
+                        <div class="container-box" data-id="2281f922-7e4a-11f0-a47c-e848b8c82000">
+                            <div class="legend_group">
+                                <div class="legend">
+                                    <div class="title" data-key="Name">График 3</div>
+                                    <div class="border"></div>
+                                    <div class="group">
+                                        <div>
+                                            <span class="dot this-year"></span>Теряем
+                                        </div>
+
+                                        <div>
+                                            <span class="dot last-year "></span>Новые
+                                        </div>
+                                        <div>
+                                            <span class="dot this-year" style="background-color: #00C7BE;"></span>Постоянные
+                                        </div>
+
+                                        <div>
+                                            <span class="dot last-year" style="background-color: #5856D6"></span>Разовый
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="profitChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -482,68 +538,61 @@
         </div>
     </section>
 
-    <!-- MIXED CHARTS -->
-    <section class="mixed_charts">
+    <section>
         <div class="container">
-            <div class="chart_row">
-                <div class="chart_item" data-id="345e2812-16d3-11f0-a462-e848b8c82000">
-                    <div class="title add" data-key="Name">Конверсия по месяцам</div>
-                    <canvas id="myLineChart"></canvas>
-                </div>
-                <div class="chart_item">
-                    <div class="group">
-                        <div class="title">??? Кол-во выставленных счетов за месяц</div>
-                        <select id="month-select">
-                            <option value="0">Январь</option>
-                            <option value="1">Февраль</option>
-                            <option value="2">Март</option>
-                            <option value="3" selected>Апрель</option>
-                            <option value="4">Май</option>
-                            <option value="5">Июнь</option>
-                            <option value="6">Июль</option>
-                            <option value="7">Август</option>
-                            <option value="8">Сентябрь</option>
-                            <option value="9">Октябрь</option>
-                            <option value="10">Ноябрь</option>
-                            <option value="11">Декабрь</option>
-                        </select>
-                    </div>
-
-                    <div class="canvas-item">
-                        <canvas id="invoiceChart" style="width: 660px;"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- INCOME CHART -->
-    <section class="income_chart">
-        <div class="container" data-id="2281f922-7e4a-11f0-a47c-e848b8c82000">
-            <div class="legend_group">
-                <div class="legend">
-                    <div class="title" data-key="Name">Динамика клиентской базы</div>
-                    <div class="border"></div>
-                    <div class="group">
-                        <div id="toggle-this-year">
-                            <span class="dot this-year"></span>Теряем
-                        </div>
-
-                        <div id="toggle-last-year">
-                            <span class="dot last-year "></span>Новые
-                        </div>
-                        <div id="toggle-this-year">
-                            <span class="dot this-year" style="background-color: #00C7BE;"></span>Постоянные
-                        </div>
-
-                        <div id="toggle-last-year">
-                            <span class="dot last-year" style="background-color: #5856D6"></span>Разовый
+            <ul class="nav nav-underline mb-4">
+                <li class="nav-item" data-id="345e2812-16d3-11f0-a462-e848b8c82000">
+                    <a class="nav-link active"
+                       data-bs-toggle="tab" data-bs-target="#tab-pane10" type="button" role="tab"
+                       aria-controls="tab-pane1" aria-selected="true"
+                       href="#" data-key="Name">График 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       data-bs-toggle="tab" data-bs-target="#tab-pane11" type="button" role="tab"
+                       aria-controls="tab-pane2" aria-selected="false"
+                       href="#" data-key="Name">График 2</a>
+                </li>
+            </ul>
+            <!-- MIXED CHARTS -->
+            <div class="tab-content mixed_charts">
+                <div class="tab-pane fade show active" id="tab-pane10" role="tabpanel"
+                     aria-labelledby="tab-10"
+                     tabindex="0">
+                    <div class="chart_item" data-id="345e2812-16d3-11f0-a462-e848b8c82000">
+                        <div class="title add" data-key="Name">Конверсия по месяцам</div>
+                        <div class="chart-container">
+                            <canvas id="myLineChart"></canvas>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="chart-container">
-                <canvas id="profitChart"></canvas>
+                <div class="tab-pane fade" id="tab-pane11" role="tabpanel"
+                     aria-labelledby="tab-11"
+                     tabindex="0">
+                    <div class="chart_item">
+                        <div class="group">
+                            <div class="title">График 2</div>
+                            <select id="month-select">
+                                <option value="0">Январь</option>
+                                <option value="1">Февраль</option>
+                                <option value="2">Март</option>
+                                <option value="3" selected>Апрель</option>
+                                <option value="4">Май</option>
+                                <option value="5">Июнь</option>
+                                <option value="6">Июль</option>
+                                <option value="7">Август</option>
+                                <option value="8">Сентябрь</option>
+                                <option value="9">Октябрь</option>
+                                <option value="10">Ноябрь</option>
+                                <option value="11">Декабрь</option>
+                            </select>
+                        </div>
+
+                        <div class="chart-container">
+                            <canvas id="invoiceChart"></canvas>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

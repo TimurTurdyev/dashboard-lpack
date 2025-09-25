@@ -227,6 +227,8 @@ $(document).ready(function () {
             }]
         },
         options: {
+            responsive: true,
+            maintainAspectRatio: false,
             interaction: {
                 mode: 'index',
                 intersect: false,
@@ -308,7 +310,9 @@ $(document).ready(function () {
             }]
         },
         options: {
-            responsive: ctMedia,
+            responsive: true,
+            maintainAspectRatio: false,
+            // responsive: ctMedia,
             plugins: {
                 tooltip: {
                     enabled: false // disables the tooltip on hover
@@ -581,6 +585,10 @@ $(document).ready(function () {
                 }, 1000 * 60);
             },
             error: function (xhr, status, error) {
+                if (xhr.status === 0) {
+                    return;
+                }
+
                 // Handle errors
                 console.error(xhr.responseText);
                 $('#error').show().find('pre').prepend(xhr.responseText);

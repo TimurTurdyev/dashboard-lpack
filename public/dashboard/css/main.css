@@ -21,6 +21,7 @@
 section {
     padding: 0 1rem;
 }
+
 /*
 @media (max-width: 1440px) {
   .container {
@@ -665,14 +666,14 @@ section {
     }
 }
 
-.chart-section .container {
+.chart-section .container-box {
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     border-radius: var(--16, 16px);
     background: var(--Background-BG2, #F9F9FA);
 }
 
-.chart-section .container .legend {
+.chart-section .legend {
     display: flex;
     gap: 20px;
     font-size: 14px;
@@ -680,12 +681,12 @@ section {
 }
 
 @media (max-width: 578px) {
-    .chart-section .container .legend {
+    .chart-section .legend {
         align-items: center;
     }
 }
 
-.chart-section .container .dot {
+.chart-section .dot {
     display: inline-block;
     width: 10px;
     height: 10px;
@@ -694,57 +695,57 @@ section {
 }
 
 @media (max-width: 578px) {
-    .chart-section .container .dot {
+    .chart-section .dot {
         width: 6px;
         height: 6px;
     }
 }
 
-.chart-section .container .this-year {
+.chart-section .this-year {
     background-color: #22c55e;
 }
 
-.chart-section .container .last-year {
+.chart-section .last-year {
     background-color: #3b82f6;
 }
 
-.chart-section .container .chart-container {
+.chart-container {
     position: relative;
-    height: 217px;
+    height: 25rem;
 }
 
 @media (max-width: 992px) {
-    .chart-section .container .chart-container {
-        height: 270px;
+    .chart-container {
+        height: 19rem;
     }
 }
 
-.chart-section .container .title {
+.chart-section .title {
     color: var(--Primary-Brand, #000);
     font-family: Rubik;
     font-size: 17px;
 }
 
 @media (max-width: 578px) {
-    .chart-section .container .title {
+    .chart-section .title {
         font-size: 14px;
     }
 }
 
 @media (max-width: 420px) {
-    .chart-section .container .title {
+    .chart-section .title {
         font-size: 12px;
     }
 }
 
-.chart-section .container .group {
+.chart-section .group {
     display: flex;
     align-items: center;
     gap: 0 20px;
 }
 
 @media (max-width: 578px) {
-    .chart-section .container .group {
+    .chart-section .group {
         font-size: 12px;
         flex-direction: column;
         align-items: start;
@@ -752,19 +753,19 @@ section {
 }
 
 @media (max-width: 420px) {
-    .chart-section .container .group {
+    .chart-section .group {
         font-size: 12px;
     }
 }
 
-.bar .container {
+.bar .container-box {
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     border-radius: var(--16, 16px);
     background: var(--Background-BG2, #F9F9FA);
 }
 
-.bar .container .legend {
+.bar .legend {
     display: flex;
     gap: 20px;
     font-size: 14px;
@@ -772,18 +773,18 @@ section {
 }
 
 @media (max-width: 578px) {
-    .bar .container .legend {
+    .bar .legend {
         align-items: center;
     }
 }
 
 @media (max-width: 420px) {
-    .bar .container .legend {
+    .bar .legend {
         font-size: 12px;
     }
 }
 
-.bar .container .dot {
+.bar .dot {
     display: inline-block;
     width: 10px;
     height: 10px;
@@ -792,46 +793,46 @@ section {
 }
 
 @media (max-width: 578px) {
-    .bar .container .dot {
+    .bar .dot {
         height: 6px;
         width: 6px;
     }
 }
 
-.bar .container .this-year {
+.bar .this-year {
     background-color: rgb(88, 86, 214);
 }
 
-.bar .container .last-year {
+.bar .last-year {
     background-color: rgb(0, 199, 190);
 }
 
-.bar .container .title {
+.bar .title {
     color: var(--Primary-Brand, #000);
     font-family: Rubik;
     font-size: 17px;
 }
 
 @media (max-width: 578px) {
-    .bar .container .title {
+    .bar .title {
         font-size: 14px;
     }
 }
 
 @media (max-width: 420px) {
-    .bar .container .title {
+    .bar .title {
         width: 150px;
     }
 }
 
-.bar .container .group {
+.bar .group {
     display: flex;
     align-items: center;
     gap: 5px 20px;
 }
 
 @media (max-width: 578px) {
-    .bar .container .group {
+    .bar .group {
         font-size: 12px;
         flex-direction: column;
         align-items: start;
@@ -839,21 +840,10 @@ section {
 }
 
 @media (max-width: 420px) {
-    .bar .container .group {
+    .bar .group {
         font-size: 12px;
         gap: 5px 10px;
         justify-content: space-between;
-    }
-}
-
-.bar .container .chart-container {
-    position: relative;
-    height: 202px;
-}
-
-@media (max-width: 992px) {
-    .bar .container .chart-container {
-        height: 250px;
     }
 }
 
@@ -869,61 +859,64 @@ section {
     }
 }
 
-.mixed_charts .chart_row .chart_item {
-    width: calc(50% - 14px);
+.mixed_charts .chart_item {
     padding: 24px;
     border-radius: var(--24, 24px);
     background: var(--Background-BG2, #F9F9FA);
     box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 992px) {
+.mixed_charts .chart_row .chart_item {
+    width: calc(50% - 14px);
+}
+
+@media (max-width: 768px) {
     .mixed_charts .chart_row .chart_item {
         width: 100%;
     }
 }
 
 @media (max-width: 578px) {
-    .mixed_charts .chart_row .chart_item {
+    .mixed_charts .chart_item {
         padding: 5px;
     }
 }
 
-.mixed_charts .chart_row .chart_item .title {
+.mixed_charts .chart_item .title {
     color: var(--Primary-Brand, #000);
     font-family: Rubik;
     font-size: 17px;
 }
 
 @media (max-width: 578px) {
-    .mixed_charts .chart_row .chart_item .title {
+    .mixed_charts .chart_item .title {
         font-size: 15px;
     }
 }
 
-.mixed_charts .chart_row .chart_item .add {
+.mixed_charts .chart_item .add {
     margin-bottom: 53px;
 }
 
-.mixed_charts .chart_row .chart_item .group {
+.mixed_charts .chart_item .group {
     margin-bottom: 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.mixed_charts .chart_row .chart_item .group select {
+.mixed_charts .chart_item .group select {
     padding: 8px 16px;
     border-radius: var(--12, 12px);
     width: 120px;
     font-size: 16px;
 }
 
-.mixed_charts .chart_row .chart_item .group .nice-select {
+.mixed_charts .chart_item .group .nice-select {
     background: rgb(239, 239, 240) !important;
 }
 
-.mixed_charts .chart_row .chart_item .group .nice-select .list {
+.mixed_charts .chart_item .group .nice-select .list {
     max-height: 260px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -933,7 +926,7 @@ section {
     overflow-x: auto;
 }
 
-.income_chart .container {
+.income_chart .container-box {
     padding: 24px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     border-radius: var(--16, 16px);
@@ -941,12 +934,12 @@ section {
 }
 
 @media (max-width: 578px) {
-    .income_chart .container {
+    .income_chart .container-box {
         padding: 6px;
     }
 }
 
-.income_chart .container .legend_group {
+.income_chart .legend_group {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -954,7 +947,7 @@ section {
 }
 
 @media (max-width: 578px) {
-    .income_chart .container .legend_group {
+    .income_chart .legend_group {
         flex-wrap: wrap;
         flex-direction: column;
         align-items: start;
@@ -962,54 +955,44 @@ section {
     }
 }
 
-.income_chart .container .select_group {
+.income_chart .select_group {
     display: flex;
     gap: 0 16px;
 }
 
-.income_chart .container .select_group select {
+.income_chart .select_group select {
     font-size: 16px;
 }
 
-.income_chart .container .select_group .nice-select {
+.income_chart .select_group .nice-select {
     background: rgb(239, 239, 240) !important;
 }
 
-.income_chart .container .select_group .nice-select .list {
+.income_chart .select_group .nice-select .list {
     max-height: 260px;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
-.income_chart .container .legend {
+.income_chart .legend {
     display: flex;
     gap: 20px;
     font-size: 14px;
 }
 
 @media (max-width: 992px) {
-    .income_chart .container .legend {
+    .income_chart .legend {
         gap: 10px;
     }
 }
 
 @media (max-width: 768px) {
-    .income_chart .container .legend {
+    .income_chart .legend {
         align-items: center;
     }
 }
 
-.income_chart .container .chart-container {
-    height: 250px;
-}
-
-@media (max-width: 992px) {
-    .income_chart .container .chart-container {
-        height: 320px;
-    }
-}
-
-.income_chart .container .dot {
+.income_chart .dot {
     display: inline-block;
     width: 10px;
     height: 10px;
@@ -1018,47 +1001,47 @@ section {
 }
 
 @media (max-width: 992px) {
-    .income_chart .container .dot {
+    .income_chart .dot {
         height: 6px;
         width: 6px;
     }
 }
 
-.income_chart .container .this-year {
+.income_chart .this-year {
     background-color: #000;
 }
 
-.income_chart .container .last-year {
+.income_chart .last-year {
     background-color: rgb(174, 199, 237);
 }
 
-.income_chart .container .title {
+.income_chart .title {
     color: var(--Primary-Brand, #000);
     font-family: Rubik;
     font-size: 17px;
 }
 
 @media (max-width: 992px) {
-    .income_chart .container .title {
+    .income_chart .title {
         font-size: 14px;
     }
 }
 
-.income_chart .container .group {
+.income_chart .group {
     display: flex;
     align-items: center;
     gap: 0 20px;
 }
 
 @media (max-width: 992px) {
-    .income_chart .container .group {
+    .income_chart .group {
         gap: 0 10px;
         font-size: 12px;
     }
 }
 
 @media (max-width: 768px) {
-    .income_chart .container .group {
+    .income_chart .group {
         gap: 5px;
         flex-direction: column;
         align-items: start;
