@@ -325,7 +325,7 @@ $(document).ready(function () {
                     },
                     color: 'black',
                     font: {
-                        size: isBigTab ? 8 : 10
+                        size: isBigTab ? 12 : 14
                     },
                     padding: {
                         bottom: isBigTab ? 6 : 10 // Adjust this value to set distance between value and percentage

@@ -182,6 +182,18 @@
                        aria-controls="tab-pane3" aria-selected="false"
                        href="#" data-key="Name">График 3</a>
                 </li>
+                <li class="nav-item" data-id="345e2812-16d3-11f0-a462-e848b8c82000">
+                    <a class="nav-link"
+                       data-bs-toggle="tab" data-bs-target="#tab-pane4" type="button" role="tab"
+                       aria-controls="tab-pane3" aria-selected="false"
+                       href="#" data-key="Name">График 4</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       data-bs-toggle="tab" data-bs-target="#tab-pane5" type="button" role="tab"
+                       aria-controls="tab-pane3" aria-selected="false"
+                       href="#" data-key="Name">График 5</a>
+                </li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="tab-pane1" role="tabpanel"
@@ -262,6 +274,47 @@
                             </div>
                             <div class="chart-container">
                                 <canvas id="profitChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tab-pane4" role="tabpanel"
+                     aria-labelledby="tab-4"
+                     tabindex="0">
+                    <div class="mixed_charts">
+                        <div class="chart_item" data-id="345e2812-16d3-11f0-a462-e848b8c82000">
+                            <div class="title add" data-key="Name">Конверсия по месяцам</div>
+                            <div class="chart-container">
+                                <canvas id="myLineChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tab-pane5" role="tabpanel"
+                     aria-labelledby="tab-5"
+                     tabindex="0">
+                    <div class="mixed_charts">
+                        <div class="chart_item">
+                            <div class="group">
+                                <div class="title">График 2</div>
+                                <select id="month-select">
+                                    <option value="0">Январь</option>
+                                    <option value="1">Февраль</option>
+                                    <option value="2">Март</option>
+                                    <option value="3" selected>Апрель</option>
+                                    <option value="4">Май</option>
+                                    <option value="5">Июнь</option>
+                                    <option value="6">Июль</option>
+                                    <option value="7">Август</option>
+                                    <option value="8">Сентябрь</option>
+                                    <option value="9">Октябрь</option>
+                                    <option value="10">Ноябрь</option>
+                                    <option value="11">Декабрь</option>
+                                </select>
+                            </div>
+
+                            <div class="chart-container">
+                                <canvas id="invoiceChart"></canvas>
                             </div>
                         </div>
                     </div>
@@ -534,65 +587,6 @@
                     </tr>
                     </tbody>
                 </table>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <ul class="nav nav-underline mb-4">
-                <li class="nav-item" data-id="345e2812-16d3-11f0-a462-e848b8c82000">
-                    <a class="nav-link active"
-                       data-bs-toggle="tab" data-bs-target="#tab-pane10" type="button" role="tab"
-                       aria-controls="tab-pane1" aria-selected="true"
-                       href="#" data-key="Name">График 1</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link"
-                       data-bs-toggle="tab" data-bs-target="#tab-pane11" type="button" role="tab"
-                       aria-controls="tab-pane2" aria-selected="false"
-                       href="#" data-key="Name">График 2</a>
-                </li>
-            </ul>
-            <!-- MIXED CHARTS -->
-            <div class="tab-content mixed_charts">
-                <div class="tab-pane fade show active" id="tab-pane10" role="tabpanel"
-                     aria-labelledby="tab-10"
-                     tabindex="0">
-                    <div class="chart_item" data-id="345e2812-16d3-11f0-a462-e848b8c82000">
-                        <div class="title add" data-key="Name">Конверсия по месяцам</div>
-                        <div class="chart-container">
-                            <canvas id="myLineChart"></canvas>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="tab-pane11" role="tabpanel"
-                     aria-labelledby="tab-11"
-                     tabindex="0">
-                    <div class="chart_item">
-                        <div class="group">
-                            <div class="title">График 2</div>
-                            <select id="month-select">
-                                <option value="0">Январь</option>
-                                <option value="1">Февраль</option>
-                                <option value="2">Март</option>
-                                <option value="3" selected>Апрель</option>
-                                <option value="4">Май</option>
-                                <option value="5">Июнь</option>
-                                <option value="6">Июль</option>
-                                <option value="7">Август</option>
-                                <option value="8">Сентябрь</option>
-                                <option value="9">Октябрь</option>
-                                <option value="10">Ноябрь</option>
-                                <option value="11">Декабрь</option>
-                            </select>
-                        </div>
-
-                        <div class="chart-container">
-                            <canvas id="invoiceChart"></canvas>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
