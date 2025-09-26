@@ -172,7 +172,7 @@ $(document).ready(function () {
                     boxHeight: 8,
                     callbacks: {
                         labelPointStyle: () => ({pointStyle: 'circle', rotation: 0}),
-                        label: (context) => `₽ ${context.formattedValue} млн`
+                        label: (context) => `${context.formattedValue}`
                     }
                 }
             },
