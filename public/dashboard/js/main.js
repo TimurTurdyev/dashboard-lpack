@@ -190,7 +190,7 @@ $(document).ready(function () {
                         stepSize: 10,                      // Show 0, 10, 20, 30...
                         callback: function (value) {
                             if (value != 0) {
-                                return value + " млн";
+                                return value;
                             }
                             return 0
                         },
