@@ -13,6 +13,13 @@ $(document).ready(function () {
         down: 'dashboard/images/arrow-down.svg',
     }
 
+    const monthsShort = [
+        'янв', 'фев', 'мар',
+        'апр', 'май', 'июн',
+        'июл', 'авг', 'сен',
+        'окт', 'ноя', 'дек'
+    ];
+
 // media
     const isBigTab = window.innerWidth <= 1200;
 // chart js line chart(1)
@@ -22,10 +29,7 @@ $(document).ready(function () {
     ctxElements['e4854dd8-163e-11f0-a461-e848b8c82000'] = new Chart(ctx, {
         type: "line",
         data: {
-            labels: [
-                "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
-                "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
-            ],
+            labels: monthsShort,
             datasets: [
                 {
                     label: "Этот год",
@@ -52,13 +56,13 @@ $(document).ready(function () {
             ]
         },
         options: {
+            responsive: true,
             maintainAspectRatio: false,
             interaction: {
                 mode: 'index',
                 intersect: false,
             },
             plugins: {
-
                 tooltip: {
                     usePointStyle: true,
                     callbacks: {
@@ -80,26 +84,25 @@ $(document).ready(function () {
             },
             scales: {
                 x: {
-                    ticks: {
-                        color: "#959596", // dark gray
-                        font: {
-                            size: 12,
-                        },
-                        callback: function (val, index, ticks) {
-                            // Add margin-left (spacing) to first month by prepending spaces
-                            return index === 0 ? '   ' + this.getLabelForValue(val) : this.getLabelForValue(val);
-                        },
-                    },
-                    title: {
-                        display: true,
-                        font: {
-                            size: 12,
-                        },
-
-                        ticks: {
-                            color: "#959596",
-                        }
-                    },
+                    // ticks: {
+                    //     color: "#959596", // dark gray
+                    //     font: {
+                    //         size: 12,
+                    //     },
+                    //     callback: function (val, index, ticks) {
+                    //         // Add margin-left (spacing) to first month by prepending spaces
+                    //         return index === 0 ? '   ' + this.getLabelForValue(val) : this.getLabelForValue(val);
+                    //     },
+                    // },
+                    // title: {
+                    //     display: true,
+                    //     font: {
+                    //         size: 12,
+                    //     },
+                    //     ticks: {
+                    //         color: "#959596",
+                    //     }
+                    // },
                     grid: {
                         display: false, // remove background grid (vertical)
                         drawBorder: false
@@ -109,18 +112,17 @@ $(document).ready(function () {
 
                     beginAtZero: true,
                     ticks: {
-                        stepSize: 10,
+                        stepSize: 1,
                         callback: function (value) {
                             if (value != 0) {
                                 return value + " млн";
                             }
                             return 0
                         },
-
-                        color: "#959596",
-                        font: {
-                            size: 12
-                        }
+                        // color: "#959596",
+                        // font: {
+                        //     size: 12
+                        // }
                     },
                     grid: {
                         display: false, // remove background grid (horizontal)
@@ -138,10 +140,7 @@ $(document).ready(function () {
     ctxElements['3ffd47f3-164c-11f0-a461-e848b8c82000'] = new Chart(ctbx, {
         type: 'bar',
         data: {
-            labels: [
-                "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
-                "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
-            ],
+            labels: monthsShort,
             datasets: [
                 {
                     label: "Этот год",
@@ -180,10 +179,10 @@ $(document).ready(function () {
             scales: {
                 x: {
                     grid: {display: false},
-                    ticks: {
-                        color: "#6b7280",
-                        font: {size: 12}
-                    }
+                    // ticks: {
+                    //     color: "#6b7280",
+                    //     font: {size: 12}
+                    // }
                 },
                 y: {
                     beginAtZero: true,
@@ -195,8 +194,8 @@ $(document).ready(function () {
                             }
                             return 0
                         },
-                        color: "#6b7280",
-                        font: {size: 12}
+                        // color: "#6b7280",
+                        // font: {size: 12}
                     },
                     grid: {
                         display: false,                    // No stripes
@@ -213,7 +212,7 @@ $(document).ready(function () {
     ctxElements['345e2812-16d3-11f0-a462-e848b8c82000'] = new Chart(cx, {
         type: 'line',
         data: {
-            labels: ['Янв.', 'Февр.', 'Март', 'Апр.', 'Май', 'Июн', 'Июль', 'Авг.', 'Сент.', 'Окт.', 'Нояб.', 'Дек.'],
+            labels: monthsShort,
             datasets: [{
                 label: 'Процент',
                 data: [10, 20, 15, 30, 25, 35, 40, 30, 25, 45, 40, 50], // Sample data
@@ -223,7 +222,6 @@ $(document).ready(function () {
                 tension: 0.1,
                 pointRadius: 0,
                 pointHoverRadius: 0,
-                borderWidth: 2
             }]
         },
         options: {
@@ -391,10 +389,7 @@ $(document).ready(function () {
         type: "line",
         type: 'bar',
         data: {
-            labels: [
-                "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
-                "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
-            ],
+            labels: monthsShort,
             datasets: [
                 {
                     label: "Теряем",
@@ -451,8 +446,8 @@ $(document).ready(function () {
                 x: {
                     grid: {display: false},
                     ticks: {
-                        color: "#6b7280",
-                        font: {size: 12}
+                        // color: "#6b7280",
+                        // font: {size: 12}
                     }
                 },
                 y: {
@@ -465,8 +460,8 @@ $(document).ready(function () {
                             }
                             return 0
                         },
-                        color: "#6b7280",
-                        font: {size: 12}
+                        // color: "#6b7280",
+                        // font: {size: 12}
                     },
                     grid: {
                         display: false,                    // No stripes

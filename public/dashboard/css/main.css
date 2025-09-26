@@ -711,12 +711,12 @@ section {
 
 .chart-container {
     position: relative;
-    height: 18rem;
+    height: 14rem;
 }
 
 @media (max-width: 992px) {
     .chart-container {
-        height: 13rem;
+        height: 12rem;
     }
 }
 
