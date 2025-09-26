@@ -550,12 +550,11 @@ section {
 @media (max-width: 992px) {
     .experiment_results_start table tbody tr td .td-content p {
         font-size: 9px;
+        gap: 0 4px;
     }
-}
 
-@media (max-width: 992px) {
-    .experiment_results_start table tbody tr td .td-content p {
-        gap: 0;
+    .experiment_results_start table tbody tr td .td-content p span {
+        font-size: 7px;
     }
 }
 
@@ -570,12 +569,6 @@ section {
     font-size: 12px;
     font-weight: 400;
     align-items: center;
-}
-
-@media (max-width: 992px) {
-    .experiment_results_start table tbody tr td .td-content p span {
-        font-size: 7px;
-    }
 }
 
 @media (max-width: 578px) {
