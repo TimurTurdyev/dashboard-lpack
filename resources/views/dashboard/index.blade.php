@@ -475,115 +475,12 @@
                         <th>Сообщения в WatsApp</th>
                         <th>Конверсия, %</th>
                     </tr>
-
                     </thead>
                     <tbody>
                     <tr>
-                        <td class="name">1 <span>Хохлов В.</span></td>
-                        <td>
-                            <div class="td-content">
-                                <div class="top">
-                                    8
-                                    <img data-key="indicator" src="{{ asset('dashboard/images/arrow-up.svg') }}" alt="">
-                                </div>
-                                <p>190 <span>-12%</span></p>
-                            </div>
+                        <td colspan="7">
+                            Данные загружаются...
                         </td>
-                        <td>
-                            <div class="td-content">
-                                <div class="top">
-                                    0,3 мл
-                                    <img data-key="indicator" src="{{ asset('dashboard/images/arrow-up.svg') }}" alt="">
-                                </div>
-                                <p>5 мл <span>-12%</span></p>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="td-content">
-                                <div class="top">
-                                    30
-                                    <img data-key="indicator" src="{{ asset('dashboard/images/arrow-up.svg') }}" alt="">
-                                </div>
-                                <p>60 <span>-12%</span></p>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="td-content">
-                                <div class="top">
-                                    46
-                                    <img data-key="indicator" src="{{ asset('dashboard/images/arrow-up.svg') }}" alt="">
-                                </div>
-                                <p>60<span>-12%</span></p>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="td-content watsapp">
-                                15
-                            </div>
-                        </td>
-                        <td>
-                            <div class="td-content">
-                                <div class="top">
-                                    5
-                                    <img data-key="indicator" src="{{ asset('dashboard/images/arrow-up.svg') }}" alt="">
-                                </div>
-                                <p>20 <span>-12%</span></p>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="name"> 2 <span>Чепурнов В.</span></td>
-                        <td>
-                            <div class="td-content">
-                                <div class="top">
-                                    5
-                                    <img data-key="indicator" src="{{ asset('dashboard/images/arrow-up.svg') }}" alt="">
-                                </div>
-                                <p>190 <span>-12%</span></p>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="td-content">
-                                <div class="top">
-                                    0,3 мл
-                                    <img data-key="indicator" src="{{ asset('dashboard/images/arrow-up.svg') }}" alt="">
-                                </div>
-                                <p>5 мл <span>-12%</span></p>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="td-content">
-                                <div class="top">
-                                    30
-                                    <img data-key="indicator" src="{{ asset('dashboard/images/arrow-up.svg') }}" alt="">
-                                </div>
-                                <p>60 <span>-12%</span></p>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="td-content">
-                                <div class="top">
-                                    34
-                                    <img data-key="indicator" src="{{ asset('dashboard/images/arrow-up.svg') }}" alt="">
-                                </div>
-                                <p>60 <span>-12%</span></p>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="td-content watsapp">
-                                30
-                            </div>
-                        </td>
-                        <td>
-                            <div class="td-content">
-                                <div class="top">
-                                    5
-                                    <img data-key="indicator" src="{{ asset('dashboard/images/arrow-up.svg') }}" alt="">
-                                </div>
-                                <p>20 <span>-12%</span></p>
-                            </div>
-                        </td>
-
                     </tr>
                     </tbody>
                 </table>
@@ -631,8 +528,10 @@
             </div>
         </td>
         <td>
-            <div class="td-content watsapp">
-                {Value4}
+            <div class="td-content">
+                <div class="top">
+                    {Value4}
+                </div>
             </div>
         </td>
         <td>
