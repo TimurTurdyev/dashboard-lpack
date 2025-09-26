@@ -33,7 +33,7 @@ $(document).ready(function () {
             datasets: [
                 {
                     label: "Этот год",
-                    data: [18, 10, 12, 15, 20, 22, 23, 28, 21, 25, 24, 26],
+                    data: [],
                     borderColor: "#22c55e",
                     backgroundColor: "#34C759",
                     fill: false,
@@ -44,7 +44,7 @@ $(document).ready(function () {
                 },
                 {
                     label: "Прошлый год",
-                    data: [10, 15, 15, 20, 21, 19, 17, 22, 26, 27, 28, 29],
+                    data: [],
                     borderColor: "#AEC7ED",
                     backgroundColor: "#AEC7ED",
                     fill: false,
@@ -144,7 +144,7 @@ $(document).ready(function () {
             datasets: [
                 {
                     label: "Этот год",
-                    data: [22, 28, 23, 27, 24, 28, 25, 24, 24, 4, 26, 28],
+                    data: [],
                     backgroundColor: "#00C7BE",
                     borderRadius: 6,
                     barPercentage: 0.8,          // Wider bars
@@ -152,7 +152,7 @@ $(document).ready(function () {
                 },
                 {
                     label: "Прошлый год",
-                    data: [12, 18, 12, 12, 19, 19, 20, 20, 20, 18, 20, 10],
+                    data: [],
                     backgroundColor: "#5856D6",
                     borderRadius: 6,
                     barPercentage: 0.8,          // Wider bars
@@ -215,7 +215,7 @@ $(document).ready(function () {
             labels: monthsShort,
             datasets: [{
                 label: 'Процент',
-                data: [10, 20, 15, 30, 25, 35, 40, 30, 25, 45, 40, 50], // Sample data
+                data: [], // Sample data
                 borderColor: '#007AFF',
                 borderWidth: 2,
                 fill: false,
