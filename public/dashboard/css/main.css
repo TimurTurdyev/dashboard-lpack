@@ -547,6 +547,13 @@ section {
     white-space: nowrap;
 }
 
+.experiment_results_start table tbody tr td .td-content p span {
+    color: #EB5757;
+    font-size: 12px;
+    font-weight: 400;
+    align-items: center;
+}
+
 @media (max-width: 992px) {
     .experiment_results_start table tbody tr td .td-content p {
         font-size: 9px;
@@ -562,13 +569,6 @@ section {
     .experiment_results_start table tbody tr td .td-content p {
         font-size: 12px;
     }
-}
-
-.experiment_results_start table tbody tr td .td-content p span {
-    color: #EB5757;
-    font-size: 12px;
-    font-weight: 400;
-    align-items: center;
 }
 
 @media (max-width: 578px) {
