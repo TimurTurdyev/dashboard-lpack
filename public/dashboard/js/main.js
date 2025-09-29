@@ -45,8 +45,19 @@ $(document).ready(function () {
                 {
                     label: "Прошлый год",
                     data: [],
-                    borderColor: "#AEC7ED",
-                    backgroundColor: "#AEC7ED",
+                    borderColor: "#3b82f6",
+                    backgroundColor: "#3b82f6",
+                    fill: false,
+                    tension: 0,
+                    pointRadius: 0,
+                    pointHoverRadius: 0,
+                    borderWidth: 2
+                },
+                {
+                    label: "План",
+                    data: [],
+                    borderColor: "#5856D6",
+                    backgroundColor: "#5856D6",
                     fill: false,
                     tension: 0,
                     pointRadius: 0,

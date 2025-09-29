@@ -188,7 +188,7 @@
                        aria-controls="tab-pane3" aria-selected="false"
                        href="#" data-key="Name">График 4</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-id="97628348-9bcc-11f0-a485-e848b8c82000">
                     <a class="nav-link"
                        data-bs-toggle="tab" data-bs-target="#tab-pane5" type="button" role="tab"
                        aria-controls="tab-pane3" aria-selected="false"
@@ -211,6 +211,9 @@
                                     </div>
                                     <div>
                                         <span class="dot last-year"></span>Прошлый год
+                                    </div>
+                                    <div>
+                                        <span class="dot last-year" style="background-color: #5856D6"></span>План
                                     </div>
                                 </div>
                             </div>
@@ -294,23 +297,9 @@
                      aria-labelledby="tab-5"
                      tabindex="0">
                     <div class="mixed_charts">
-                        <div class="chart_item">
+                        <div class="chart_item" data-id="97628348-9bcc-11f0-a485-e848b8c82000">
                             <div class="group">
                                 <div class="title">График 5</div>
-                                <select id="month-select">
-                                    <option value="0">Январь</option>
-                                    <option value="1">Февраль</option>
-                                    <option value="2">Март</option>
-                                    <option value="3" selected>Апрель</option>
-                                    <option value="4">Май</option>
-                                    <option value="5">Июнь</option>
-                                    <option value="6">Июль</option>
-                                    <option value="7">Август</option>
-                                    <option value="8">Сентябрь</option>
-                                    <option value="9">Октябрь</option>
-                                    <option value="10">Ноябрь</option>
-                                    <option value="11">Декабрь</option>
-                                </select>
                             </div>
 
                             <div class="chart-container">
