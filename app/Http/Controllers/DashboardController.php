@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardController extends Controller
 {
@@ -28,6 +29,7 @@ class DashboardController extends Controller
      */
     public function crmData()
     {
+//        return Storage::disk('public')->get('response.json');
         $credentials = session()->get('credentials');
 
         if (!$credentials) {
@@ -58,6 +60,8 @@ class DashboardController extends Controller
             ];
             return response(implode(PHP_EOL, $message), 500);
         }
+
+//        return Storage::disk('public')->put('response.json', $response->body('widgets', []));
 
         return response([
             'serverDate' => now()->format('Y-m-d H:i:s'),

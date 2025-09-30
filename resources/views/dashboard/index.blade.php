@@ -163,33 +163,33 @@
     </section>
     <section>
         <div class="container">
-            <ul class="nav nav-underline mb-4">
+            <ul class="nav nav-underline flex-nowrap overflow-x-auto mb-4">
                 <li class="nav-item" data-id="e4854dd8-163e-11f0-a461-e848b8c82000">
-                    <a class="nav-link active"
+                    <a class="nav-link text-nowrap active"
                        data-bs-toggle="tab" data-bs-target="#tab-pane1" type="button" role="tab"
                        aria-controls="tab-pane1" aria-selected="true"
                        href="#" data-key="Name">График 1</a>
                 </li>
                 <li class="nav-item" data-id="3ffd47f3-164c-11f0-a461-e848b8c82000">
-                    <a class="nav-link"
+                    <a class="nav-link text-nowrap"
                        data-bs-toggle="tab" data-bs-target="#tab-pane2" type="button" role="tab"
                        aria-controls="tab-pane2" aria-selected="false"
                        href="#" data-key="Name">График 2</a>
                 </li>
                 <li class="nav-item" data-id="2281f922-7e4a-11f0-a47c-e848b8c82000">
-                    <a class="nav-link"
+                    <a class="nav-link text-nowrap"
                        data-bs-toggle="tab" data-bs-target="#tab-pane3" type="button" role="tab"
                        aria-controls="tab-pane3" aria-selected="false"
                        href="#" data-key="Name">График 3</a>
                 </li>
                 <li class="nav-item" data-id="345e2812-16d3-11f0-a462-e848b8c82000">
-                    <a class="nav-link"
+                    <a class="nav-link text-nowrap"
                        data-bs-toggle="tab" data-bs-target="#tab-pane4" type="button" role="tab"
                        aria-controls="tab-pane3" aria-selected="false"
                        href="#" data-key="Name">График 4</a>
                 </li>
                 <li class="nav-item" data-id="97628348-9bcc-11f0-a485-e848b8c82000">
-                    <a class="nav-link"
+                    <a class="nav-link text-nowrap"
                        data-bs-toggle="tab" data-bs-target="#tab-pane5" type="button" role="tab"
                        aria-controls="tab-pane3" aria-selected="false"
                        href="#" data-key="Name">График 5</a>
@@ -299,7 +299,7 @@
                     <div class="mixed_charts">
                         <div class="chart_item" data-id="97628348-9bcc-11f0-a485-e848b8c82000">
                             <div class="group">
-                                <div class="title">График 5</div>
+                                <div class="title" data-key="Name">График 5</div>
                             </div>
 
                             <div class="chart-container">
@@ -320,6 +320,25 @@
                     <div class="card_title">
                         <img src="{{ asset('dashboard/images/card_title_img.svg') }}" alt="">
                         <span data-key="Name">Создано счетов</span>
+                    </div>
+                    <div class="card_text">
+                        <div class="left">
+                            <span data-key="Value"></span>
+                            <img data-key="indicator" src="{{ asset('dashboard/images/arrow-up.svg') }}" alt="">
+                        </div>
+                        <div class="right">
+                            План<span data-key="Plan">?</span>
+                        </div>
+                    </div>
+                    <div class="card_bottom">
+                        <div class="left">Компания:<span data-key="Additionally">?</span></div>
+                        <div class="right" data-key="Percent"></div>
+                    </div>
+                </div>
+                <div class="card" data-id="9ab8d20b-195d-11f0-a464-e848b8c82000">
+                    <div class="card_title">
+                        <img src="{{ asset('dashboard/images/card_title_img.svg') }}" alt="">
+                        <span data-key="Name">Создано счетов за день</span>
                     </div>
                     <div class="card_text">
                         <div class="left">
@@ -400,6 +419,22 @@
                         <div class="right" data-key="Percent"></div>
                     </div>
                 </div>
+                <div class="card" data-id="03974f0b-1fb6-11f0-a467-e848b8c82000">
+                    <div class="card_title"><img src="{{ asset('dashboard/images/card_title_img8.svg') }}" alt="">
+                        <span data-key="Name">Входящие звонки</span>
+                    </div>
+                    <div class="card_text">
+                        <div class="left"><span data-key="Value"></span>
+                            <img data-key="indicator" src="{{ asset('dashboard/images/arrow-up.svg') }}" alt=""></div>
+                        <div class="right">
+                            План<span data-key="Plan">?</span>
+                        </div>
+                    </div>
+                    <div class="card_bottom">
+                        <div class="left">Компания:<span data-key="Additionally">?</span></div>
+                        <div class="right" data-key="Percent"></div>
+                    </div>
+                </div>
                 <div class="card" data-id="7facd5ff-3735-11f0-a473-e848b8c82000">
                     <div class="card_title"><img src="{{ asset('dashboard/images/card_title_img6.svg') }}" alt="">
                         <span data-key="Name">Исходящие e-mails</span>
@@ -432,8 +467,8 @@
                         <div class="right" data-key="Percent"></div>
                     </div>
                 </div>
-                <div class="card end">
-                    <div class="card_title">??? Прогресс за день</div>
+                <div class="card end" data-id="659f6934-9c3a-11f0-a485-e848b8c82000">
+                    <div class="card_title" data-key="Name">??? Прогресс за день</div>
                     <div class="card_text">
                         <div class="card_img">
                             <img src="{{ asset('dashboard/images/card_end_img.svg') }}" alt="">

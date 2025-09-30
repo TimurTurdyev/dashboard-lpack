@@ -6,6 +6,7 @@ $(document).ready(function () {
         '3ffd47f3-164c-11f0-a461-e848b8c82000': null,
         '345e2812-16d3-11f0-a462-e848b8c82000': null,
         '2281f922-7e4a-11f0-a47c-e848b8c82000': null,
+        '97628348-9bcc-11f0-a485-e848b8c82000': null,
     };
 
     const icons = {
@@ -85,7 +86,8 @@ $(document).ready(function () {
                             };
                         },
                         label: function (context) {
-                            return `₽ ${context.formattedValue} млн`;
+                            const label = context.dataset.label;
+                            return `${label}: ₽ ${context.formattedValue} млн`;
                         }
                     }
                 },
@@ -303,25 +305,21 @@ $(document).ready(function () {
     const percentChanges = calculatePercentageChange(aprilData);
 
     const ct = document.getElementById('invoiceChart').getContext('2d');
-    let ctMedia = true
-    if (window.innerWidth <= 768) {
-        ctMedia = false
-    }
 
-    new Chart(ct, {
+    ctxElements['97628348-9bcc-11f0-a485-e848b8c82000'] = new Chart(ct, {
         type: 'bar',
         data: {
             labels: labels,
             datasets: [{
                 label: 'Счета',
                 data: aprilData,
-                backgroundColor: 'rgb(225 225 225)'
+                backgroundColor: 'rgb(225 225 225)',
+                percent: [],
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            // responsive: ctMedia,
             plugins: {
                 tooltip: {
                     enabled: false // disables the tooltip on hover
@@ -354,7 +352,7 @@ $(document).ready(function () {
                 },
                 y: {
                     beginAtZero: true,
-                    max: 300,
+                    max: 30,
                     grid: {
                         display: false,
                         drawBorder: false
@@ -370,20 +368,19 @@ $(document).ready(function () {
                     const {ctx} = chart;
                     const dataset = chart.data.datasets[0];
                     const meta = chart.getDatasetMeta(0);
+                    const percentChanges = chart.data.datasets[0].percent;
 
                     ctx.save();
                     ctx.font = isBigTab ? '7px Inter' : '9px Inter';
                     ctx.textAlign = 'center';
                     //   ctx.fillText(percent, bar.x, bar.y + 5);
 
+
                     dataset.data.forEach((val, index) => {
                         if (!meta.data[index]) return;
                         const bar = meta.data[index];
                         const percent = percentChanges[index];
-                        const prev = index > 0 ? dataset.data[index - 1] : null;
-                        const color = (index === 0 || prev === null || prev === 0 || val >= prev) ? 'green' : 'red';
-
-                        ctx.fillStyle = color;
+                        ctx.fillStyle = !percent.includes('-') ? 'green' : 'red';
                         ctx.fillText(percent, bar.x, bar.y + -10); // Adjust distance as needed
                     });
 
@@ -538,6 +535,11 @@ $(document).ready(function () {
 
                     console.info(row);
 
+                    if ($element.length === 0) {
+                        console.warn(`Не реализован: ${id}`);
+                        return;
+                    }
+
                     if ($element.length) {
                         console.log(id);
                         if (id === 'db18260b-1fa3-11f0-a467-e848b8c82000') {
@@ -579,6 +581,32 @@ $(document).ready(function () {
                     if (currentChart) {
                         console.info(currentChart.data.datasets)
 
+                        if (id === '97628348-9bcc-11f0-a485-e848b8c82000') {
+                            console.log(row)
+                            if (!row.Value.length) {
+                                return;
+                            }
+
+                            let aprilData = row.Value[0]?.Data;
+                            let maxInt = 0;
+
+                            currentChart.data.labels = Array.from({length: aprilData.length}, (_, i) => (i + 1).toString());
+
+                            currentChart.data.datasets[0].data = [];
+                            currentChart.data.datasets[0].percent = [];
+
+                            $.each(aprilData, function (i, value) {
+                                currentChart.data.datasets[0].data.push(value.Value);
+                                currentChart.data.datasets[0].percent.push(value.Percent);
+                                maxInt = Math.max(maxInt, value.Value);
+                            });
+
+                            currentChart.options.scales.y.max = maxInt + 5;
+
+                            currentChart.update();
+                            return;
+                        }
+
                         $.each(row.Value, function (i, value) {
                             currentChart.data.datasets[i].data = value.Data;
                         });
@@ -607,24 +635,24 @@ $(document).ready(function () {
 
     setData();
 
-   if (screenfull.isEnabled) {
-       $('#fill-screen svg:first').show();
-       $('#fill-screen svg:last').hide();
+    if (screenfull.isEnabled) {
+        $('#fill-screen svg:first').show();
+        $('#fill-screen svg:last').hide();
 
-       $('#fill-screen').on('click', function (event) {
-           event.preventDefault();
-           screenfull.toggle();
-       });
+        $('#fill-screen').on('click', function (event) {
+            event.preventDefault();
+            screenfull.toggle();
+        });
 
-       screenfull.on('change', () => {
-           if (screenfull.isFullscreen) {
-               $('#fill-screen svg:first').hide();
-               $('#fill-screen svg:last').show();
-           } else {
-               $('#fill-screen svg:first').show();
-               $('#fill-screen svg:last').hide();
-           }
-       });
-   }
+        screenfull.on('change', () => {
+            if (screenfull.isFullscreen) {
+                $('#fill-screen svg:first').hide();
+                $('#fill-screen svg:last').show();
+            } else {
+                $('#fill-screen svg:first').show();
+                $('#fill-screen svg:last').hide();
+            }
+        });
+    }
 });
 

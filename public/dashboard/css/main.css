@@ -136,8 +136,8 @@ section {
 .card_item .card_item_start {
     display: flex;
     flex-wrap: wrap;
-    gap: 28px 0;
-    justify-content: space-between;
+    gap: 28px 12px;
+    justify-content: start;
 }
 
 @media (max-width: 1200px) {
@@ -160,7 +160,7 @@ section {
 }
 
 .card_item .card {
-    width: calc(25% - 7px);
+    width: calc(25% - 9px);
     padding: 24px 24px 9px 24px;
     border-radius: 16px;
     background: #F8F9FA;
@@ -1041,4 +1041,6 @@ section {
     }
 }
 
-/*# sourceMappingURL=main.css.map */
+.nav.flex-nowrap {
+    overscroll-behavior: contain;
+}
