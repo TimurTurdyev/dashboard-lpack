@@ -1044,3 +1044,19 @@ section {
 .nav.flex-nowrap {
     overscroll-behavior: contain;
 }
+
+/*EC6E00*/
+.progress-watch .bar-watch {
+    position: relative;
+    overflow: hidden;
+    width: 96px;
+    flex-shrink: 0;
+    padding-bottom: 5px;
+}
+
+.progress-watch .bar-watch img:last-child {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    rotate: var(--rotate-arrow, -64deg);
+}

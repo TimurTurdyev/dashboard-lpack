@@ -335,25 +335,6 @@
                         <div class="right" data-key="Percent"></div>
                     </div>
                 </div>
-                <div class="card" data-id="9ab8d20b-195d-11f0-a464-e848b8c82000">
-                    <div class="card_title">
-                        <img src="{{ asset('dashboard/images/card_title_img.svg') }}" alt="">
-                        <span data-key="Name">Создано счетов за день</span>
-                    </div>
-                    <div class="card_text">
-                        <div class="left">
-                            <span data-key="Value"></span>
-                            <img data-key="indicator" src="{{ asset('dashboard/images/arrow-up.svg') }}" alt="">
-                        </div>
-                        <div class="right">
-                            План<span data-key="Plan">?</span>
-                        </div>
-                    </div>
-                    <div class="card_bottom">
-                        <div class="left">Компания:<span data-key="Additionally">?</span></div>
-                        <div class="right" data-key="Percent"></div>
-                    </div>
-                </div>
                 <div class="card" data-id="c7a0b4cc-1ee4-11f0-a467-e848b8c82000">
                     <div class="card_title">
                         <img src="{{ asset('dashboard/images/card_title_img2.svg') }}" alt="">
@@ -467,14 +448,18 @@
                         <div class="right" data-key="Percent"></div>
                     </div>
                 </div>
-                <div class="card end" data-id="659f6934-9c3a-11f0-a485-e848b8c82000">
+                <div class="card end progress-watch" data-id="659f6934-9c3a-11f0-a485-e848b8c82000">
                     <div class="card_title" data-key="Name">??? Прогресс за день</div>
                     <div class="card_text">
-                        <div class="card_img">
+                        <div class="card_img bar-watch">
                             <img src="{{ asset('dashboard/images/card_end_img.svg') }}" alt="">
+                            <img src="{{ asset('dashboard/images/card_end_img_arrow.svg') }}" alt="">
                         </div>
-                        <div class="card_element">
-                            <img src="{{ asset('dashboard/images/card_end_img_2.svg') }}" alt="">Средний день 👌
+                        <div class="card_element bar-check">
+                            <span><img src="{{ asset('dashboard/images/card_end_img_state0.svg') }}" alt=""> Плохой день 👎</span>
+                            <span><img src="{{ asset('dashboard/images/card_end_img_state1.svg') }}" alt=""> Средний день 👌</span>
+                            <span><img src="{{ asset('dashboard/images/card_end_img_state2.svg') }}" alt=""> Нормальный день 👍</span>
+                            <span><img src="{{ asset('dashboard/images/card_end_img_state3.svg') }}" alt=""> Так держать 🤙</span>
                         </div>
                     </div>
 

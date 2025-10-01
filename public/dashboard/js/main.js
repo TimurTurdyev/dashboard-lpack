@@ -514,6 +514,50 @@ $(document).ready(function () {
         return results;
     }
 
+    function percentageToValue(value, min, max) {
+        if (isNaN(value)) {
+            value = 0;
+        }
+
+        const range = max - min;
+
+        // Ограничиваем процент в диапазоне 0-100
+        const clampedPercentage = Math.min(100, Math.max(0, value));
+
+        // Вычисляем значение в диапазоне min-max
+        return min + (range * clampedPercentage) / 100;
+    }
+
+    function valueToPercentage(value, min, max) {
+        if (isNaN(value)) {
+            value = 0;
+        }
+        const range = max - min;
+
+        // Ограничиваем значение в диапазоне min-max
+        const clampedValue = Math.min(max, Math.max(min, value));
+
+        // Вычисляем процент (0-100)
+        return ((clampedValue - min) / range) * 100;
+    }
+
+    function valueToState(value, min, max) {
+        if (isNaN(value)) {
+            value = 0;
+        }
+
+        const range = max - min;
+
+        const clampedValue = Math.min(max, Math.max(min, value));
+        const percentage = ((clampedValue - min) / range) * 100;
+
+        if (percentage < 25) return 0;
+        if (percentage < 50) return 1;
+        if (percentage < 75) return 2;
+
+        return 3;
+    }
+
     function setData() {
         $.ajax({
             url: 'crm/dashboard-data', // Example URL for admin panel
@@ -548,6 +592,22 @@ $(document).ready(function () {
 
                             $element.find('tbody').html(tr);
                             return;
+                        }
+
+                        if (id === '659f6934-9c3a-11f0-a485-e848b8c82000') {
+                            let value = percentageToValue(row.Value, -64, 116);
+                            let state = valueToState(row.Value, -64, 116);
+                            $element.css({
+                                '--rotate-arrow': `${value}deg`,
+                            });
+                            console.log($element.find('.bar-check span'))
+                            $element.find('.bar-check span').each(function(i, el) {
+                                if (state === i) {
+                                    $(el).show();
+                                } else {
+                                    $(el).hide();
+                                }
+                            });
                         }
 
                         $element.find('[data-key]').each(function (i, el) {
