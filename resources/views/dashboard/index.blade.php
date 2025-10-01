@@ -62,7 +62,7 @@
                 <!-- general_item -->
                 <div class="general_item" data-id="3f92bfdb-72b4-11f0-a47b-e848b8c82000">
                     <div class="top">
-                        <img src="{{ asset('dashboard/images/user-active.png') }}" alt="">
+                        <img src="{{ asset('dashboard/images/user-active.png') }}?ver={{ config('main.commit_hash') }}" alt="">
                         <div class="title">Постоянных клиентов</div>
                     </div>
                     <div class="bottom">
@@ -73,7 +73,7 @@
                 <!-- general_item -->
                 <div class="general_item" data-id="069ce91b-72b2-11f0-a47b-e848b8c82000">
                     <div class="top">
-                        <img src="{{ asset('dashboard/images/user-info.png') }}" alt="">
+                        <img src="{{ asset('dashboard/images/user-info.png') }}?ver={{ config('main.commit_hash') }}" alt="">
                         <div class="title">Новых клиентов</div>
                     </div>
                     <div class="bottom">
@@ -84,7 +84,7 @@
                 <!-- general_item -->
                 <div class=" general_item" data-id="e08bf8cd-72b4-11f0-a47b-e848b8c82000">
                     <div class="top">
-                        <img src="{{ asset('dashboard/images/user-delete.png') }}" alt="">
+                        <img src="{{ asset('dashboard/images/user-delete.png') }}?ver={{ config('main.commit_hash') }}" alt="">
                         <div class="title">Потерянных клиентов</div>
                     </div>
                     <div class="bottom">
@@ -95,7 +95,7 @@
                 <!-- general_item -->
                 <div class="general_item" data-id="f50290e1-16c1-11f0-a462-e848b8c82000">
                     <div class="top">
-                        <img src="{{ asset('dashboard/images/general_data_icon1.png') }}" alt="">
+                        <img src="{{ asset('dashboard/images/general_data_icon1.png') }}?ver={{ config('main.commit_hash') }}" alt="">
                         <div class="title">В воронке</div>
                     </div>
                     <div class="bottom">
@@ -106,7 +106,7 @@
                 <!-- general_item -->
                 <div class="general_item" data-id="d1becadf-16c3-11f0-a462-e848b8c82000">
                     <div class="top">
-                        <img src="{{ asset('dashboard/images/general_data_icon2.png') }}" alt="">
+                        <img src="{{ asset('dashboard/images/general_data_icon2.png') }}?ver={{ config('main.commit_hash') }}" alt="">
                         <div class="title">Закрыто</div>
                     </div>
                     <div class="bottom">
@@ -117,7 +117,7 @@
                 <!-- general_item -->
                 <div class=" general_item" data-id="aa69d970-16c5-11f0-a462-e848b8c82000">
                     <div class="top">
-                        <img src="{{ asset('dashboard/images/general_data_icon3.png') }}" alt="">
+                        <img src="{{ asset('dashboard/images/general_data_icon3.png') }}?ver={{ config('main.commit_hash') }}" alt="">
                         <div class="title">Выполнения плана, год</div>
                     </div>
                     <div class="bottom">
@@ -128,7 +128,7 @@
                 <!-- general_item -->
                 <div class=" general_item" data-id="e865f505-16ce-11f0-a462-e848b8c82000">
                     <div class="top">
-                        <img src="{{ asset('dashboard/images/general_data_icon4.png') }}" alt="">
+                        <img src="{{ asset('dashboard/images/general_data_icon4.png') }}?ver={{ config('main.commit_hash') }}" alt="">
                         <div class="title">Средний чек</div>
                     </div>
                     <div class="bottom">
@@ -139,7 +139,7 @@
                 <!-- general_item -->
                 <div class=" general_item" data-id="27e22afc-16ca-11f0-a462-e848b8c82000">
                     <div class="top">
-                        <img src="{{ asset('dashboard/images/general_data_icon5.png') }}" alt="">
+                        <img src="{{ asset('dashboard/images/general_data_icon5.png') }}?ver={{ config('main.commit_hash') }}" alt="">
                         <div class="title">Конверсия за год</div>
                     </div>
                     <div class="bottom">
@@ -150,7 +150,7 @@
                 <!-- general_item -->
                 <div class="general_item" data-id="248ece99-16ce-11f0-a462-e848b8c82000">
                     <div class="top">
-                        <img src="{{ asset('dashboard/images/general_data_icon6.png') }}" alt="">
+                        <img src="{{ asset('dashboard/images/general_data_icon6.png') }}?ver={{ config('main.commit_hash') }}" alt="">
                         <div class="title">Среднее время</div>
                     </div>
                     <div class="bottom">
@@ -318,13 +318,13 @@
             <div class="card_item_start">
                 <div class="card" data-id="62af4de7-16d5-11f0-a462-e848b8c82000">
                     <div class="card_title">
-                        <img src="{{ asset('dashboard/images/card_title_img.svg') }}" alt="">
+                        <img src="{{ asset('dashboard/images/card_title_img.svg') }}?ver={{ config('main.commit_hash') }}" alt="">
                         <span data-key="Name">Создано счетов</span>
                     </div>
                     <div class="card_text">
                         <div class="left">
                             <span data-key="Value"></span>
-                            <img data-key="indicator" src="{{ asset('dashboard/images/arrow-up.svg') }}" alt="">
+                            <img data-key="indicator" src="{{ asset('dashboard/images/arrow-up.svg') }}?ver={{ config('main.commit_hash') }}" alt="">
                         </div>
                         <div class="right">
                             План<span data-key="Plan">?</span>
@@ -337,12 +337,12 @@
                 </div>
                 <div class="card" data-id="c7a0b4cc-1ee4-11f0-a467-e848b8c82000">
                     <div class="card_title">
-                        <img src="{{ asset('dashboard/images/card_title_img2.svg') }}" alt="">
+                        <img src="{{ asset('dashboard/images/card_title_img2.svg') }}?ver={{ config('main.commit_hash') }}" alt="">
                         <span data-key="Name">Сумма счетов</span>
                     </div>
                     <div class="card_text">
                         <div class="left"><span data-key="Value"></span>
-                            <img data-key="indicator" src="{{ asset('dashboard/images/arrow-up.svg') }}" alt=""></div>
+                            <img data-key="indicator" src="{{ asset('dashboard/images/arrow-up.svg') }}?ver={{ config('main.commit_hash') }}" alt=""></div>
                         <div class="right">
                             План<span data-key="Plan">?</span>
                         </div>
@@ -353,12 +353,12 @@
                     </div>
                 </div>
                 <div class="card" data-id="64a3b108-1ef4-11f0-a467-e848b8c82000">
-                    <div class="card_title"><img src="{{ asset('dashboard/images/card_title_img3.svg') }}" alt="">
+                    <div class="card_title"><img src="{{ asset('dashboard/images/card_title_img3.svg') }}?ver={{ config('main.commit_hash') }}" alt="">
                         <span data-key="Name">Заявки</span>
                     </div>
                     <div class="card_text">
                         <div class="left"><span data-key="Value"></span>
-                            <img data-key="indicator" src="{{ asset('dashboard/images/arrow-down.svg') }}" alt=""></div>
+                            <img data-key="indicator" src="{{ asset('dashboard/images/arrow-down.svg') }}?ver={{ config('main.commit_hash') }}" alt=""></div>
                         <div class="right ">
                             План<span data-key="Plan">?</span>
                         </div>
@@ -369,12 +369,12 @@
                     </div>
                 </div>
                 <div class="card" data-id="8aa76cc0-1fb8-11f0-a467-e848b8c82000">
-                    <div class="card_title"><img src="{{ asset('dashboard/images/card_title_img4.svg') }}" alt="">
+                    <div class="card_title"><img src="{{ asset('dashboard/images/card_title_img4.svg') }}?ver={{ config('main.commit_hash') }}" alt="">
                         <span data-key="Name">Конверсия (день)</span>
                     </div>
                     <div class="card_text">
                         <div class="left"><span data-key="Value"></span>
-                            <img data-key="indicator" src="{{ asset('dashboard/images/arrow-down.svg') }}" alt=""></div>
+                            <img data-key="indicator" src="{{ asset('dashboard/images/arrow-down.svg') }}?ver={{ config('main.commit_hash') }}" alt=""></div>
                         <div class="right ">
                             План<span data-key="Plan">?</span>
                         </div>
@@ -385,12 +385,12 @@
                     </div>
                 </div>
                 <div class="card" data-id="2fe11cf4-1fb5-11f0-a467-e848b8c82000">
-                    <div class="card_title"><img src="{{ asset('dashboard/images/card_title_img5.svg') }}" alt="">
+                    <div class="card_title"><img src="{{ asset('dashboard/images/card_title_img5.svg') }}?ver={{ config('main.commit_hash') }}" alt="">
                         <span data-key="Name">Исходящие звонки</span>
                     </div>
                     <div class="card_text">
                         <div class="left"><span data-key="Value"></span>
-                            <img data-key="indicator" src="{{ asset('dashboard/images/arrow-up.svg') }}" alt=""></div>
+                            <img data-key="indicator" src="{{ asset('dashboard/images/arrow-up.svg') }}?ver={{ config('main.commit_hash') }}" alt=""></div>
                         <div class="right">
                             План<span data-key="Plan">?</span>
                         </div>
@@ -401,12 +401,12 @@
                     </div>
                 </div>
                 <div class="card" data-id="03974f0b-1fb6-11f0-a467-e848b8c82000">
-                    <div class="card_title"><img src="{{ asset('dashboard/images/card_title_img8.svg') }}" alt="">
+                    <div class="card_title"><img src="{{ asset('dashboard/images/card_title_img8.svg') }}?ver={{ config('main.commit_hash') }}" alt="">
                         <span data-key="Name">Входящие звонки</span>
                     </div>
                     <div class="card_text">
                         <div class="left"><span data-key="Value"></span>
-                            <img data-key="indicator" src="{{ asset('dashboard/images/arrow-up.svg') }}" alt=""></div>
+                            <img data-key="indicator" src="{{ asset('dashboard/images/arrow-up.svg') }}?ver={{ config('main.commit_hash') }}" alt=""></div>
                         <div class="right">
                             План<span data-key="Plan">?</span>
                         </div>
@@ -417,12 +417,12 @@
                     </div>
                 </div>
                 <div class="card" data-id="7facd5ff-3735-11f0-a473-e848b8c82000">
-                    <div class="card_title"><img src="{{ asset('dashboard/images/card_title_img6.svg') }}" alt="">
+                    <div class="card_title"><img src="{{ asset('dashboard/images/card_title_img6.svg') }}?ver={{ config('main.commit_hash') }}" alt="">
                         <span data-key="Name">Исходящие e-mails</span>
                     </div>
                     <div class="card_text">
                         <div class="left"><span data-key="Value"></span> <img
-                                data-key="indicator" src="{{ asset('dashboard/images/arrow-up.svg') }}" alt=""></div>
+                                data-key="indicator" src="{{ asset('dashboard/images/arrow-up.svg') }}?ver={{ config('main.commit_hash') }}" alt=""></div>
                         <div class="right">
                             План<span data-key="Plan">?</span>
                         </div>
@@ -433,12 +433,12 @@
                     </div>
                 </div>
                 <div class="card" data-id="91b2e448-1fb6-11f0-a467-e848b8c82000">
-                    <div class="card_title"><img src="{{ asset('dashboard/images/card_title_img7.svg') }}" alt="">
+                    <div class="card_title"><img src="{{ asset('dashboard/images/card_title_img7.svg') }}?ver={{ config('main.commit_hash') }}" alt="">
                         <span data-key="Name">Сообщения в WhatsApp сегодня</span>
                     </div>
                     <div class="card_text">
                         <div class="left"><span data-key="Value"></span>
-                            <img data-key="indicator" src="{{ asset('dashboard/images/arrow-up.svg') }}" alt=""></div>
+                            <img data-key="indicator" src="{{ asset('dashboard/images/arrow-up.svg') }}?ver={{ config('main.commit_hash') }}" alt=""></div>
                         <div class="right">
                             План<span data-key="Plan">?</span>
                         </div>
@@ -452,14 +452,14 @@
                     <div class="card_title" data-key="Name">??? Прогресс за день</div>
                     <div class="card_text">
                         <div class="card_img bar-watch">
-                            <img src="{{ asset('dashboard/images/card_end_img.svg') }}" alt="">
-                            <img src="{{ asset('dashboard/images/card_end_img_arrow.svg') }}" alt="">
+                            <img src="{{ asset('dashboard/images/card_end_img.svg') }}?ver={{ config('main.commit_hash') }}" alt="">
+                            <img src="{{ asset('dashboard/images/card_end_img_arrow.svg') }}?ver={{ config('main.commit_hash') }}" alt="">
                         </div>
                         <div class="card_element bar-check">
-                            <span><img src="{{ asset('dashboard/images/card_end_img_state0.svg') }}" alt=""> Плохой день 👎</span>
-                            <span><img src="{{ asset('dashboard/images/card_end_img_state1.svg') }}" alt=""> Средний день 👌</span>
-                            <span><img src="{{ asset('dashboard/images/card_end_img_state2.svg') }}" alt=""> Нормальный день 👍</span>
-                            <span><img src="{{ asset('dashboard/images/card_end_img_state3.svg') }}" alt=""> Так держать 🤙</span>
+                            <span><img src="{{ asset('dashboard/images/card_end_img_state0.svg') }}?ver={{ config('main.commit_hash') }}" alt=""> Плохой день 👎</span>
+                            <span><img src="{{ asset('dashboard/images/card_end_img_state1.svg') }}?ver={{ config('main.commit_hash') }}" alt=""> Средний день 👌</span>
+                            <span><img src="{{ asset('dashboard/images/card_end_img_state2.svg') }}?ver={{ config('main.commit_hash') }}" alt=""> Нормальный день 👍</span>
+                            <span><img src="{{ asset('dashboard/images/card_end_img_state3.svg') }}?ver={{ config('main.commit_hash') }}" alt=""> Так держать 🤙</span>
                         </div>
                     </div>
 
