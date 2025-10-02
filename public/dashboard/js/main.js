@@ -550,7 +550,7 @@ $(document).ready(function () {
 
         const clampedValue = Math.min(max, Math.max(min, value));
         const percentage = ((clampedValue - min) / range) * 100;
-
+        console.log(percentage, value)
         if (percentage < 25) return 0;
         if (percentage < 50) return 1;
         if (percentage < 75) return 2;
@@ -596,11 +596,11 @@ $(document).ready(function () {
 
                         if (id === '659f6934-9c3a-11f0-a485-e848b8c82000') {
                             let value = percentageToValue(row.Value, -64, 116);
-                            let state = valueToState(row.Value, -64, 116);
+                            let state = valueToState(row.Value, 0, 100);
                             $element.css({
                                 '--rotate-arrow': `${value}deg`,
                             });
-                            console.log($element.find('.bar-check span'))
+                            console.log(state, value)
                             $element.find('.bar-check span').each(function(i, el) {
                                 if (state === i) {
                                     $(el).show();
