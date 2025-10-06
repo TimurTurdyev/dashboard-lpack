@@ -7,6 +7,9 @@ $(document).ready(function () {
         '345e2812-16d3-11f0-a462-e848b8c82000': null,
         '2281f922-7e4a-11f0-a47c-e848b8c82000': null,
         '97628348-9bcc-11f0-a485-e848b8c82000': null,
+        'c22e9e5a-a1d3-11f0-a485-e848b8c82000': null,
+        '9bf781a5-a1d5-11f0-a485-e848b8c82000': null,
+        '69c8bdcf-a1da-11f0-a485-e848b8c82000': null,
     };
 
     const icons = {
@@ -97,25 +100,6 @@ $(document).ready(function () {
             },
             scales: {
                 x: {
-                    // ticks: {
-                    //     color: "#959596", // dark gray
-                    //     font: {
-                    //         size: 12,
-                    //     },
-                    //     callback: function (val, index, ticks) {
-                    //         // Add margin-left (spacing) to first month by prepending spaces
-                    //         return index === 0 ? '   ' + this.getLabelForValue(val) : this.getLabelForValue(val);
-                    //     },
-                    // },
-                    // title: {
-                    //     display: true,
-                    //     font: {
-                    //         size: 12,
-                    //     },
-                    //     ticks: {
-                    //         color: "#959596",
-                    //     }
-                    // },
                     grid: {
                         display: false, // remove background grid (vertical)
                         drawBorder: false
@@ -127,15 +111,11 @@ $(document).ready(function () {
                     ticks: {
                         stepSize: 1,
                         callback: function (value) {
-                            if (value != 0) {
+                            if (value !== 0) {
                                 return value + " млн";
                             }
                             return 0
                         },
-                        // color: "#959596",
-                        // font: {
-                        //     size: 12
-                        // }
                     },
                     grid: {
                         display: false, // remove background grid (horizontal)
@@ -146,78 +126,186 @@ $(document).ready(function () {
         }
     });
 
+    let salesGroup = [
+        `<div><span class="dot this-year"></span>{Series}</div>`,
+        `<div><span class="dot last-year"></span>{Series}</div>`,
+        `<div><span class="dot last-year" style="background-color: #5856D6"></span>{Series}</div>`,
+    ]
 
-// bar chart
-    const ctbx = document.getElementById('myChart').getContext('2d');
-
-    ctxElements['3ffd47f3-164c-11f0-a461-e848b8c82000'] = new Chart(ctbx, {
-        type: 'bar',
-        data: {
-            labels: monthsShort,
-            datasets: [
-                {
-                    label: "Этот год",
-                    data: [],
-                    backgroundColor: "#00C7BE",
-                    borderRadius: 6,
-                    barPercentage: 0.8,          // Wider bars
-                    categoryPercentage: 0.8,
-                },
-                {
-                    label: "Прошлый год",
-                    data: [],
-                    backgroundColor: "#5856D6",
-                    borderRadius: 6,
-                    barPercentage: 0.8,          // Wider bars
-                    categoryPercentage: 0.8,
-                    pointHoverRadius: 0,
-                }
-            ]
+    let salesDataset = [
+        {
+            label: "",
+            data: [],
+            borderColor: "#22c55e",
+            backgroundColor: "#34C759",
+            fill: false,
+            tension: 0.2,
+            pointRadius: 0,
+            pointHoverRadius: 0,
+            borderWidth: 2
         },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {display: false},
-                tooltip: {
-                    usePointStyle: true,
-                    boxWidth: 8,
-                    boxHeight: 8,
-                    callbacks: {
-                        labelPointStyle: () => ({pointStyle: 'circle', rotation: 0}),
-                        label: (context) => `${context.formattedValue}`
-                    }
-                }
+        {
+            label: "",
+            data: [],
+            borderColor: "#3b82f6",
+            backgroundColor: "#3b82f6",
+            fill: false,
+            tension: 0,
+            pointRadius: 0,
+            pointHoverRadius: 0,
+            borderWidth: 2
+        },
+        {
+            label: "",
+            data: [],
+            borderColor: "#5856D6",
+            backgroundColor: "#5856D6",
+            fill: false,
+            tension: 0,
+            pointRadius: 0,
+            pointHoverRadius: 0,
+            borderWidth: 2
+        }
+    ]
+
+    function sales(guid, elementId) {
+        let ctx = document.getElementById(elementId).getContext('2d');
+        ctxElements[guid] = new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: [],
+                datasets: []
             },
-            scales: {
-                x: {
-                    grid: {display: false},
-                    // ticks: {
-                    //     color: "#6b7280",
-                    //     font: {size: 12}
-                    // }
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
                 },
-                y: {
-                    beginAtZero: true,
-                    ticks: {
-                        stepSize: 10,                      // Show 0, 10, 20, 30...
-                        callback: function (value) {
-                            if (value != 0) {
-                                return value;
-                            }
-                            return 0
-                        },
-                        // color: "#6b7280",
-                        // font: {size: 12}
+                plugins: {
+                    tooltip: {
+                        usePointStyle: true,
+                        callbacks: {
+                            labelPointStyle: function () {
+                                return {
+                                    pointStyle: 'circle', // <-- change square to circle
+                                    rotation: 0,
+                                    color: "#000"
+                                };
+                            },
+                            // label: function (context) {
+                            //     const label = context.dataset.label;
+                            //     return `${label}: ₽ ${context.formattedValue} млн`;
+                            // }
+                        }
                     },
-                    grid: {
-                        display: false,                    // No stripes
-                        drawBorder: false
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            display: false, // remove background grid (vertical)
+                            drawBorder: false
+                        }
+                    },
+                    y: {
+                        // ticks: {
+                        //     stepSize: 1,
+                        // },
+                        beginAtZero: true,
+                        grid: {
+                            display: false, // remove background grid (horizontal)
+                            drawBorder: false
+                        }
                     }
                 }
             }
-        }
-    });
+        });
+    }
+
+    sales('c22e9e5a-a1d3-11f0-a485-e848b8c82000', 'salesChart1');
+    sales('9bf781a5-a1d5-11f0-a485-e848b8c82000', 'salesChart2');
+
+
+// bar chart
+    function myChart(guid, elementId) {
+        const ctbx = document.getElementById(elementId).getContext('2d');
+
+        ctxElements[guid] = new Chart(ctbx, {
+            type: 'bar',
+            data: {
+                labels: monthsShort,
+                datasets: [
+                    {
+                        label: "Этот год",
+                        data: [],
+                        backgroundColor: "#00C7BE",
+                        borderRadius: 6,
+                        barPercentage: 0.8,          // Wider bars
+                        categoryPercentage: 0.8,
+                    },
+                    {
+                        label: "Прошлый год",
+                        data: [],
+                        backgroundColor: "#5856D6",
+                        borderRadius: 6,
+                        barPercentage: 0.8,          // Wider bars
+                        categoryPercentage: 0.8,
+                        pointHoverRadius: 0,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {display: false},
+                    tooltip: {
+                        usePointStyle: true,
+                        boxWidth: 8,
+                        boxHeight: 8,
+                        callbacks: {
+                            labelPointStyle: () => ({pointStyle: 'circle', rotation: 0}),
+                            label: (context) => `${context.formattedValue}`
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {display: false},
+                        // ticks: {
+                        //     color: "#6b7280",
+                        //     font: {size: 12}
+                        // }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            // stepSize: 10000,                      // Show 0, 10, 20, 30...
+                            callback: function (value) {
+                                if (value !== 0) {
+                                    return value;
+                                }
+                                return 0
+                            },
+                            // color: "#6b7280",
+                            // font: {size: 12}
+                        },
+                        grid: {
+                            display: false,                    // No stripes
+                            drawBorder: false
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    myChart('3ffd47f3-164c-11f0-a461-e848b8c82000', 'myChart');
+    myChart('69c8bdcf-a1da-11f0-a485-e848b8c82000', 'myChart13');
 
 // second line chart(single)
     const cx = document.getElementById('myLineChart').getContext('2d');
@@ -601,7 +689,7 @@ $(document).ready(function () {
                                 '--rotate-arrow': `${value}deg`,
                             });
                             console.log(state, value)
-                            $element.find('.bar-check span').each(function(i, el) {
+                            $element.find('.bar-check span').each(function (i, el) {
                                 if (state === i) {
                                     $(el).show();
                                 } else {
@@ -666,8 +754,45 @@ $(document).ready(function () {
                             currentChart.update();
                             return;
                         }
+                        if (['c22e9e5a-a1d3-11f0-a485-e848b8c82000', '9bf781a5-a1d5-11f0-a485-e848b8c82000'].includes(id)) {
+
+                            currentChart.data.labels = row.Points;
+                            let groups = [];
+
+                            $.each(row.Value, function (i, value) {
+                                let data = salesDataset[i];
+                                let series = salesGroup[i];
+                                if (data) {
+                                    groups.push(series.replace('{Series}', value.Series));
+                                    value.Data = value.Data.map(function (currentValue) {
+                                        let value = currentValue.replace(',', '.');
+                                        if (value) {
+                                            return parseFloat(value);
+                                        }
+                                        return NaN;
+                                    });
+                                    data.data = value.Data;
+                                    data.label = value.Series;
+                                    currentChart.data.datasets[i] = data;
+                                }
+                            });
+
+                            $element.find('.group').html(groups.join(''));
+
+                            console.log(currentChart.data.datasets)
+
+                            currentChart.update();
+                            return;
+                        }
 
                         $.each(row.Value, function (i, value) {
+                            value.Data = value.Data.map(function (currentValue) {
+                                let value = currentValue.replace(',', '.');
+                                if (value) {
+                                    return parseFloat(value);
+                                }
+                                return NaN;
+                            });
                             currentChart.data.datasets[i].data = value.Data;
                         });
 
@@ -675,7 +800,7 @@ $(document).ready(function () {
                     }
                 });
                 setTimeout(function () {
-                    setData();
+                    //setData();
                 }, 1000 * 60);
             },
             error: function (xhr, status, error) {

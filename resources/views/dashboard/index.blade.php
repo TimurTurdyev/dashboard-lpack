@@ -496,6 +496,83 @@
             </div>
         </div>
     </section>
+    <section>
+        <div class="container">
+            <ul class="nav nav-underline flex-nowrap overflow-x-auto mb-4">
+                <li class="nav-item" data-id="c22e9e5a-a1d3-11f0-a485-e848b8c82000">
+                    <a class="nav-link text-nowrap active"
+                       data-bs-toggle="tab" data-bs-target="#tab-pane11" type="button" role="tab"
+                       aria-controls="tab-pane1" aria-selected="true"
+                       href="#" data-key="Name">c22e9e5a-a1d3-11f0-a485-e848b8c82000</a>
+                </li>
+                <li class="nav-item" data-id="9bf781a5-a1d5-11f0-a485-e848b8c82000">
+                    <a class="nav-link text-nowrap"
+                       data-bs-toggle="tab" data-bs-target="#tab-pane12" type="button" role="tab"
+                       aria-controls="tab-pane2" aria-selected="false"
+                       href="#" data-key="Name">9bf781a5-a1d5-11f0-a485-e848b8c82000</a>
+                </li>
+                <li class="nav-item" data-id="69c8bdcf-a1da-11f0-a485-e848b8c82000">
+                    <a class="nav-link text-nowrap"
+                       data-bs-toggle="tab" data-bs-target="#tab-pane13" type="button" role="tab"
+                       aria-controls="tab-pane3" aria-selected="false"
+                       href="#" data-key="Name">69c8bdcf-a1da-11f0-a485-e848b8c82000</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="tab-pane11" role="tabpanel">
+                    <!-- CHART SECTION -->
+                    <div class="chart-section">
+                        <div class="container-box" data-id="c22e9e5a-a1d3-11f0-a485-e848b8c82000">
+                            <div class="legend">
+                                <div class="title" data-key="Name">c22e9e5a-a1d3-11f0-a485-e848b8c82000</div>
+                                <div class="border"></div>
+                                <div class="group"></div>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="salesChart1"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tab-pane12" role="tabpanel">
+                    <!-- CHART SECTION -->
+                    <div class="chart-section">
+                        <div class="container-box" data-id="9bf781a5-a1d5-11f0-a485-e848b8c82000">
+                            <div class="legend">
+                                <div class="title" data-key="Name">9bf781a5-a1d5-11f0-a485-e848b8c82000</div>
+                                <div class="border"></div>
+                                <div class="group"></div>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="salesChart2"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tab-pane13" role="tabpanel">
+                    <div class="bar">
+                        <div class="container-box" data-id="69c8bdcf-a1da-11f0-a485-e848b8c82000">
+                            <div class="legend">
+                                <div class="title" data-key="Name">69c8bdcf-a1da-11f0-a485-e848b8c82000</div>
+                                <div class="border"></div>
+                                <div class="group">
+                                    <div>
+                                        <span class="dot last-year"></span>Платежи
+                                    </div>
+                                    <div>
+                                        <span class="dot this-year"></span>Поступления
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="myChart13"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 <script type="text/html" id="rowTable">
     <tr>
