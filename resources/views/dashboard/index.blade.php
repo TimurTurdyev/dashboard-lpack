@@ -496,6 +496,14 @@
             </div>
         </div>
     </section>
+    <section class="experiment_results">
+        <div class="container">
+            <div class="experiment_results_start">
+                <h2 data-key="Name">Движение денежных средств</h2>
+
+            </div>
+        </div>
+    </section>
     <section>
         <div class="container">
             <ul class="nav nav-underline flex-nowrap overflow-x-auto mb-4">
@@ -560,7 +568,7 @@
                                         <span class="dot last-year" style="background-color: #EB5757;"></span>Платежи
                                     </div>
                                     <div>
-                                        <span class="dot this-year" style="background-color: #00C7BE;"></span>Поступления
+                                        <span class="dot this-year" style="background-color: #22c55e;"></span>Поступления
                                     </div>
                                 </div>
                             </div>

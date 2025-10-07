@@ -306,7 +306,7 @@ $(document).ready(function () {
     }
 
     myChart('3ffd47f3-164c-11f0-a461-e848b8c82000', 'myChart');
-    myChart('69c8bdcf-a1da-11f0-a485-e848b8c82000', 'myChart13', '#EB5757', '#00C7BE', true);
+    myChart('69c8bdcf-a1da-11f0-a485-e848b8c82000', 'myChart13', '#EB5757', '#22c55e', true);
 
 // second line chart(single)
     const cx = document.getElementById('myLineChart').getContext('2d');
