@@ -128,8 +128,8 @@ $(document).ready(function () {
 
     let salesGroup = [
         `<div><span class="dot this-year"></span>{Series}</div>`,
-        `<div><span class="dot last-year"></span>{Series}</div>`,
-        `<div><span class="dot last-year" style="background-color: #5856D6"></span>{Series}</div>`,
+        `<div><span class="dot last-year" style="background-color: #EB5757;"></span>{Series}</div>`,
+        `<div><span class="dot last-year" style="background-color: #5856D6;"></span>{Series}</div>`,
     ]
 
     let salesDataset = [
@@ -147,13 +147,14 @@ $(document).ready(function () {
         {
             label: "",
             data: [],
-            borderColor: "#3b82f6",
-            backgroundColor: "#3b82f6",
+            borderColor: "#EB5757",
+            backgroundColor: "#EB5757",
             fill: false,
             tension: 0,
             pointRadius: 0,
             pointHoverRadius: 0,
-            borderWidth: 2
+            borderWidth: 2,
+            borderDash: [5, 5],
         },
         {
             label: "",
@@ -217,7 +218,7 @@ $(document).ready(function () {
                         // },
                         beginAtZero: true,
                         grid: {
-                            display: false, // remove background grid (horizontal)
+                            display: true, // remove background grid (horizontal)
                             drawBorder: false
                         }
                     }
@@ -231,7 +232,7 @@ $(document).ready(function () {
 
 
 // bar chart
-    function myChart(guid, elementId) {
+    function myChart(guid, elementId, bgColor = '#00C7BE', yGridDisplay = false) {
         const ctbx = document.getElementById(elementId).getContext('2d');
 
         ctxElements[guid] = new Chart(ctbx, {
@@ -250,7 +251,7 @@ $(document).ready(function () {
                     {
                         label: "Прошлый год",
                         data: [],
-                        backgroundColor: "#5856D6",
+                        backgroundColor: bgColor,
                         borderRadius: 6,
                         barPercentage: 0.8,          // Wider bars
                         categoryPercentage: 0.8,
@@ -269,7 +270,7 @@ $(document).ready(function () {
                         boxHeight: 8,
                         callbacks: {
                             labelPointStyle: () => ({pointStyle: 'circle', rotation: 0}),
-                            label: (context) => `${context.formattedValue}`
+                            //label: (context) => `${context.formattedValue}`
                         }
                     }
                 },
@@ -285,17 +286,11 @@ $(document).ready(function () {
                         beginAtZero: true,
                         ticks: {
                             // stepSize: 10000,                      // Show 0, 10, 20, 30...
-                            callback: function (value) {
-                                if (value !== 0) {
-                                    return value;
-                                }
-                                return 0
-                            },
                             // color: "#6b7280",
                             // font: {size: 12}
                         },
                         grid: {
-                            display: false,                    // No stripes
+                            display: yGridDisplay,                    // No stripes
                             drawBorder: false
                         }
                     }
@@ -305,7 +300,7 @@ $(document).ready(function () {
     }
 
     myChart('3ffd47f3-164c-11f0-a461-e848b8c82000', 'myChart');
-    myChart('69c8bdcf-a1da-11f0-a485-e848b8c82000', 'myChart13');
+    myChart('69c8bdcf-a1da-11f0-a485-e848b8c82000', 'myChart13', '#EB5757', true);
 
 // second line chart(single)
     const cx = document.getElementById('myLineChart').getContext('2d');
@@ -800,7 +795,7 @@ $(document).ready(function () {
                     }
                 });
                 setTimeout(function () {
-                    //setData();
+                    setData();
                 }, 1000 * 60);
             },
             error: function (xhr, status, error) {

@@ -560,7 +560,7 @@
                                         <span class="dot last-year"></span>Платежи
                                     </div>
                                     <div>
-                                        <span class="dot this-year"></span>Поступления
+                                        <span class="dot this-year" style="background-color: #EB5757;"></span>Поступления
                                     </div>
                                 </div>
                             </div>
