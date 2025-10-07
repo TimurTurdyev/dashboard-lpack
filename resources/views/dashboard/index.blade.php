@@ -557,10 +557,10 @@
                                 <div class="border"></div>
                                 <div class="group">
                                     <div>
-                                        <span class="dot last-year"></span>Платежи
+                                        <span class="dot last-year" style="background-color: #EB5757;"></span>Платежи
                                     </div>
                                     <div>
-                                        <span class="dot this-year" style="background-color: #EB5757;"></span>Поступления
+                                        <span class="dot this-year" style="background-color: #00C7BE;"></span>Поступления
                                     </div>
                                 </div>
                             </div>

@@ -232,7 +232,13 @@ $(document).ready(function () {
 
 
 // bar chart
-    function myChart(guid, elementId, bgColor = '#00C7BE', yGridDisplay = false) {
+    function myChart(
+        guid,
+        elementId,
+        bgColorColor1 = '#00C7BE',
+        bgColorColor2 = '#5856D6',
+        yGridDisplay = false
+    ) {
         const ctbx = document.getElementById(elementId).getContext('2d');
 
         ctxElements[guid] = new Chart(ctbx, {
@@ -243,7 +249,7 @@ $(document).ready(function () {
                     {
                         label: "Этот год",
                         data: [],
-                        backgroundColor: "#00C7BE",
+                        backgroundColor: bgColorColor1,
                         borderRadius: 6,
                         barPercentage: 0.8,          // Wider bars
                         categoryPercentage: 0.8,
@@ -251,7 +257,7 @@ $(document).ready(function () {
                     {
                         label: "Прошлый год",
                         data: [],
-                        backgroundColor: bgColor,
+                        backgroundColor: bgColorColor2,
                         borderRadius: 6,
                         barPercentage: 0.8,          // Wider bars
                         categoryPercentage: 0.8,
@@ -300,7 +306,7 @@ $(document).ready(function () {
     }
 
     myChart('3ffd47f3-164c-11f0-a461-e848b8c82000', 'myChart');
-    myChart('69c8bdcf-a1da-11f0-a485-e848b8c82000', 'myChart13', '#EB5757', true);
+    myChart('69c8bdcf-a1da-11f0-a485-e848b8c82000', 'myChart13', '#EB5757', '#00C7BE', true);
 
 // second line chart(single)
     const cx = document.getElementById('myLineChart').getContext('2d');
