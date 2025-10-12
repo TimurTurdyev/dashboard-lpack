@@ -656,8 +656,8 @@ $(document).ready(function () {
         const isNegative = num < 0;
 
         const formatter = new Intl.NumberFormat('ru-RU', {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2,
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
             useGrouping: true
         });
 
