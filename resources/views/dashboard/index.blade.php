@@ -566,9 +566,9 @@
                         <thead>
                         <tr>
                             <th scope="col" style="width: 150px;">#</th>
-                            <th scope="col" style="width: 150px">Поступления</th>
-                            <th scope="col" style="width: 150px">Продажи</th>
-                            <th scope="col" style="width: 150px">Денежный поток</th>
+                            <th scope="col" style="width: 115px">Поступления</th>
+                            <th scope="col" style="width: 115px">Продажи</th>
+                            <th scope="col" style="width: 115px">Денежный поток</th>
                         </tr>
                         </thead>
                         <tbody>
