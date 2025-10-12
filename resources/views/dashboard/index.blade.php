@@ -574,15 +574,39 @@
                         <tbody>
                         <tr>
                             <td>без ПК</td>
-                            <td data-key="Receipts" class="text-success fs-6">?</td>
-                            <td data-key="Payments" class="text-warning fs-6">?</td>
-                            <td data-key="CashFlow" class="text-danger fs-6">?</td>
+                            <td>
+                                <div class="td-content">
+                                    <div data-key="Receipts" class="top text-success">?</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td-content">
+                                    <div data-key="Payments" class="top text-warning">?</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td-content">
+                                    <div data-key="CashFlow" class="top text-danger">?</div>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <td>с ПК (Факт + План)</td>
-                            <td data-key="Receipts_FactPlan" class="text-success fs-6">?</td>
-                            <td data-key="Payments_FactPlan" class="text-warning fs-6">?</td>
-                            <td data-key="CashFlow_FactPlan" class="text-danger fs-6">?</td>
+                            <td>
+                                <div class="td-content">
+                                    <div data-key="Receipts_FactPlan" class="top text-success">?</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td-content">
+                                    <div data-key="Payments_FactPlan" class="top text-warning">?</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td-content">
+                                    <div data-key="CashFlow_FactPlan" class="top text-danger">?</div>
+                                </div>
+                            </td>
                         </tr>
                         </tbody>
                     </table>
