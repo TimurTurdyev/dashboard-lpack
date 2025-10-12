@@ -664,7 +664,7 @@ $(document).ready(function () {
         const formatted = formatter.format(Math.abs(num));
         const result = formatted.replace(/\./, ',').replace(/\s/g, ' ');
 
-        return `${isNegative ? '-' : ''}₽${result}`;
+        return `${isNegative ? '-' : ''}${result} ₽`;
     }
 
     function setData() {
