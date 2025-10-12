@@ -556,10 +556,10 @@
         </div>
     </section>
     <section class="experiment_results">
-        <div class="container" data-id="bb1d21ac-a541-11f0-a485-e848b8c82000">
-            <h2 data-key="Name" class="mb-4">bb1d21ac-a541-11f0-a485-e848b8c82000</h2>
-            <div class="table-responsive">
-                <table class="table table-hover table-bordered" style="table-layout: fixed;">
+        <div class="container">
+            <div class="experiment_results_start" data-id="bb1d21ac-a541-11f0-a485-e848b8c82000">
+                <h2 data-key="Name">bb1d21ac-a541-11f0-a485-e848b8c82000</h2>
+                <table style="table-layout: fixed;">
                     <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -570,16 +570,16 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <th scope="row">без ПК</th>
+                        <td>без ПК</td>
                         <td data-key="Receipts" class="text-success fs-5">?</td>
-                        <td data-key="Payments" class="text-danger fs-5">?</td>
-                        <td data-key="CashFlow" class="text-warning fs-5">?</td>
+                        <td data-key="Payments" class="text-warning fs-5">?</td>
+                        <td data-key="CashFlow" class="text-danger fs-5">?</td>
                     </tr>
                     <tr>
-                        <th scope="row">с ПК (Факт + План)</th>
+                        <td>с ПК (Факт + План)</td>
                         <td data-key="Receipts_FactPlan" class="text-success fs-5">?</td>
-                        <td data-key="Payments_FactPlan" class="text-danger fs-5">?</td>
-                        <td data-key="CashFlow_FactPlan" class="text-warning fs-5">?</td>
+                        <td data-key="Payments_FactPlan" class="text-warning fs-5">?</td>
+                        <td data-key="CashFlow_FactPlan" class="text-danger fs-5">?</td>
                     </tr>
                     </tbody>
                 </table>

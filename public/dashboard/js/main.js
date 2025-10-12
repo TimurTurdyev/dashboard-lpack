@@ -647,6 +647,26 @@ $(document).ready(function () {
         return 3;
     }
 
+    function formatCurrency(number) {
+        if (isNaN(parseFloat(number)) || !isFinite(number)) {
+            return number;
+        }
+
+        const num = parseFloat(number);
+        const isNegative = num < 0;
+
+        const formatter = new Intl.NumberFormat('ru-RU', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+            useGrouping: true
+        });
+
+        const formatted = formatter.format(Math.abs(num));
+        const result = formatted.replace(/\./, ',').replace(/\s/g, ' ');
+
+        return `${isNegative ? '-' : ''}₽${result}`;
+    }
+
     function setData() {
         $.ajax({
             url: 'crm/dashboard-data', // Example URL for admin panel
@@ -724,7 +744,15 @@ $(document).ready(function () {
                                 return;
                             }
                             if (row[key] === undefined && key in row.Value) {
-                                $(el).text(row.Value[key]);
+                                if (key.includes('CashFlow')) {
+                                    console.log(key, row.Value[key])
+                                    if (row.Value[key] > 0) {
+                                        $(el).addClass('text-success').removeClass('text-danger');
+                                    } else {
+                                        $(el).removeClass('text-success').addClass('text-danger');
+                                    }
+                                }
+                                $(el).text(formatCurrency(row.Value[key]));
                                 return;
                             }
                             $(el).text(row[key]);
