@@ -723,6 +723,10 @@ $(document).ready(function () {
 
                                 return;
                             }
+                            if (row[key] === undefined && key in row.Value) {
+                                $(el).text(row.Value[key]);
+                                return;
+                            }
                             $(el).text(row[key]);
                         });
                     }

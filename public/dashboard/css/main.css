@@ -408,7 +408,7 @@ section {
     }
 }
 
-.experiment_results_start h2 {
+.experiment_results_start h2, h2 {
     color: #141414;
     font-size: 18px;
     font-weight: 600;
@@ -416,7 +416,7 @@ section {
 }
 
 @media (max-width: 992px) {
-    .experiment_results_start h2 {
+    .experiment_results_start h2, h2 {
         font-size: 12px;
     }
 }
