@@ -533,7 +533,7 @@
             <div class="experiment_results_start" data-id="db18260b-1fa3-11f0-a467-e848b8c82000">
                 <h2 data-key="Name">??? Менеджеры</h2>
                 <div class="w-100">
-                    <table style="table-layout: fixed; white-space: nowrap;">
+                    <table style="white-space: nowrap;">
                         <thead>
                         <tr>
                             <th style="width: 150px;">Сотрудник</th>
@@ -542,7 +542,7 @@
                             <th style="width: 150px;">Исходящие звонки</th>
                             <th style="width: 150px;">Исходящие e-mails</th>
                             <th style="width: 150px;">Сообщения в WatsApp</th>
-                            <th style="width: 150px;">Конверсия, %</th>
+                            <th style="width: 140px;">Конверсия, %</th>
                         </tr>
                         </thead>
                         <tbody>
