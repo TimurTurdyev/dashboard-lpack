@@ -532,26 +532,28 @@
         <div class="container">
             <div class="experiment_results_start" data-id="db18260b-1fa3-11f0-a467-e848b8c82000">
                 <h2 data-key="Name">??? Менеджеры</h2>
-                <table>
-                    <thead>
-                    <tr>
-                        <th>Сотрудник</th>
-                        <th>Создано счетов</th>
-                        <th>Сумма счетов</th>
-                        <th>Исходящие звонки</th>
-                        <th>Исходящие e-mails</th>
-                        <th>Сообщения в WatsApp</th>
-                        <th>Конверсия, %</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td colspan="7">
-                            Данные загружаются...
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                <div class="w-100">
+                    <table style="table-layout: fixed; white-space: nowrap;">
+                        <thead>
+                        <tr>
+                            <th style="width: 200px;">Сотрудник</th>
+                            <th style="width: 200px;">Создано счетов</th>
+                            <th style="width: 200px;">Сумма счетов</th>
+                            <th style="width: 200px;">Исходящие звонки</th>
+                            <th style="width: 200px;">Исходящие e-mails</th>
+                            <th style="width: 200px;">Сообщения в WatsApp</th>
+                            <th style="width: 200px;">Конверсия, %</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td colspan="7">
+                                Данные загружаются...
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </section>
@@ -559,30 +561,32 @@
         <div class="container">
             <div class="experiment_results_start" data-id="bb1d21ac-a541-11f0-a485-e848b8c82000">
                 <h2 data-key="Name">bb1d21ac-a541-11f0-a485-e848b8c82000</h2>
-                <table style="table-layout: fixed;">
-                    <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Поступления</th>
-                        <th scope="col">Продажи</th>
-                        <th scope="col">Денежный поток</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>без ПК</td>
-                        <td data-key="Receipts" class="text-success fs-5">?</td>
-                        <td data-key="Payments" class="text-warning fs-5">?</td>
-                        <td data-key="CashFlow" class="text-danger fs-5">?</td>
-                    </tr>
-                    <tr>
-                        <td>с ПК (Факт + План)</td>
-                        <td data-key="Receipts_FactPlan" class="text-success fs-5">?</td>
-                        <td data-key="Payments_FactPlan" class="text-warning fs-5">?</td>
-                        <td data-key="CashFlow_FactPlan" class="text-danger fs-5">?</td>
-                    </tr>
-                    </tbody>
-                </table>
+                <div class="w-100">
+                    <table style="table-layout: fixed; white-space: nowrap;">
+                        <thead>
+                        <tr>
+                            <th scope="col" style="width: 200px;">#</th>
+                            <th scope="col" style="width: 200px">Поступления</th>
+                            <th scope="col" style="width: 200px">Продажи</th>
+                            <th scope="col" style="width: 200px">Денежный поток</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>без ПК</td>
+                            <td data-key="Receipts" class="text-success fs-5">?</td>
+                            <td data-key="Payments" class="text-warning fs-5">?</td>
+                            <td data-key="CashFlow" class="text-danger fs-5">?</td>
+                        </tr>
+                        <tr>
+                            <td>с ПК (Факт + План)</td>
+                            <td data-key="Receipts_FactPlan" class="text-success fs-5">?</td>
+                            <td data-key="Payments_FactPlan" class="text-warning fs-5">?</td>
+                            <td data-key="CashFlow_FactPlan" class="text-danger fs-5">?</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </section>
