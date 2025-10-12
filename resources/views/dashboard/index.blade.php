@@ -536,13 +536,13 @@
                     <table style="table-layout: fixed; white-space: nowrap;">
                         <thead>
                         <tr>
-                            <th style="width: 200px;">Сотрудник</th>
-                            <th style="width: 200px;">Создано счетов</th>
-                            <th style="width: 200px;">Сумма счетов</th>
-                            <th style="width: 200px;">Исходящие звонки</th>
-                            <th style="width: 200px;">Исходящие e-mails</th>
-                            <th style="width: 200px;">Сообщения в WatsApp</th>
-                            <th style="width: 200px;">Конверсия, %</th>
+                            <th style="width: 150px;">Сотрудник</th>
+                            <th style="width: 150px;">Создано счетов</th>
+                            <th style="width: 150px;">Сумма счетов</th>
+                            <th style="width: 150px;">Исходящие звонки</th>
+                            <th style="width: 150px;">Исходящие e-mails</th>
+                            <th style="width: 150px;">Сообщения в WatsApp</th>
+                            <th style="width: 150px;">Конверсия, %</th>
                         </tr>
                         </thead>
                         <tbody>
