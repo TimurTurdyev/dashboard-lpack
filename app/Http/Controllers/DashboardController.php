@@ -29,7 +29,7 @@ class DashboardController extends Controller
      */
     public function crmData()
     {
-        return Storage::disk('public')->get('response.json');
+        //return Storage::disk('public')->get('response.json');
         $credentials = session()->get('credentials');
 
         if (!$credentials) {
