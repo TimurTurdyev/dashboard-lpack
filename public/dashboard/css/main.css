@@ -1063,16 +1063,16 @@ section {
     rotate: var(--rotate-arrow, -64deg);
 }
 
-.card_element.bar-check span {
+.card_element.bar-check > div {
     font-size: 14px;
     font-weight: 600;
     padding-left: 16px;
     position: relative;
 }
-.card_element.bar-check span img {
+.card_element.bar-check > div img {
     width: 25px!important;
     height: 24px!important;
-    position: absolute;
-    left: -5px;
-    top: -2px;
+    /*position: absolute;*/
+    /*left: -5px;*/
+    /*top: -2px;*/
 }

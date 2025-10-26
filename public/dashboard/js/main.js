@@ -49,8 +49,8 @@ $(document).ready(function () {
                 {
                     label: "Прошлый год",
                     data: [],
-                    borderColor: "#3b82f6",
-                    backgroundColor: "#3b82f6",
+                    borderColor: "rgba(59,130,246,0.56)",
+                    backgroundColor: "rgba(59,130,246,0.56)",
                     fill: false,
                     tension: 0,
                     pointRadius: 0,
@@ -710,7 +710,7 @@ $(document).ready(function () {
                                 '--rotate-arrow': `${value}deg`,
                             });
                             console.log(state, value)
-                            $element.find('.bar-check span').each(function (i, el) {
+                            $element.find('.bar-check > div').each(function (i, el) {
                                 if (state === i) {
                                     $(el).show();
                                 } else {

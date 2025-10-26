@@ -507,18 +507,38 @@
                                 alt="">
                         </div>
                         <div class="card_element bar-check">
-                            <span><img
+                            <div>
+                                <div class="ps-5 fs-4 mb-2">👎</div>
+                                <div>
+                                    <img
                                     src="{{ asset('dashboard/images/card_end_img_state0.svg') }}?ver={{ config('main.commit_hash') }}"
-                                    alt=""> Плохой день 👎</span>
-                            <span><img
+                                    alt=""> Плохой день
+                                </div>
+                            </div>
+                            <div>
+                                <div class="ps-5 fs-4 mb-2">👌</div>
+                                <div>
+                                    <img
                                     src="{{ asset('dashboard/images/card_end_img_state1.svg') }}?ver={{ config('main.commit_hash') }}"
-                                    alt=""> Средний день 👌</span>
-                            <span><img
+                                    alt=""> Средний день
+                                </div>
+                            </div>
+                            <div>
+                                <div class="ps-5 fs-4 mb-2">👍</div>
+                                <div>
+                                    <img
                                     src="{{ asset('dashboard/images/card_end_img_state2.svg') }}?ver={{ config('main.commit_hash') }}"
-                                    alt=""> Нормальный день 👍</span>
-                            <span><img
+                                    alt=""> Нормальный день
+                                </div>
+                            </div>
+                            <div>
+                                <div class="ps-5 fs-4 mb-2">🤙</div>
+                                <div>
+                                    <img
                                     src="{{ asset('dashboard/images/card_end_img_state3.svg') }}?ver={{ config('main.commit_hash') }}"
-                                    alt=""> Так держать 🤙</span>
+                                    alt=""> Так держать
+                                </div>
+                            </div>
                         </div>
                     </div>
 
