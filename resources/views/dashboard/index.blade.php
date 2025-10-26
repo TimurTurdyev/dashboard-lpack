@@ -587,7 +587,7 @@
                         <tr>
                             <th scope="col" style="width: 150px;">#</th>
                             <th scope="col" style="width: 115px">Поступления</th>
-                            <th scope="col" style="width: 115px">Продажи</th>
+                            <th scope="col" style="width: 115px">Расходы</th>
                             <th scope="col" style="width: 115px">Денежный поток</th>
                         </tr>
                         </thead>
@@ -601,7 +601,7 @@
                             </td>
                             <td>
                                 <div class="td-content">
-                                    <div data-key="Payments" class="top text-warning">?</div>
+                                    <div data-key="Payments" class="top text-danger">?</div>
                                 </div>
                             </td>
                             <td>
@@ -619,7 +619,7 @@
                             </td>
                             <td>
                                 <div class="td-content">
-                                    <div data-key="Payments_FactPlan" class="top text-warning">?</div>
+                                    <div data-key="Payments_FactPlan" class="top text-danger">?</div>
                                 </div>
                             </td>
                             <td>
