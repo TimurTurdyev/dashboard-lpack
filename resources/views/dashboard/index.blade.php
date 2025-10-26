@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.8">
     <title>Dashboard</title>
     <base href="{{ asset('/') }}">
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
 
     <!-- Bootstrap CSS -->
     <link href="{{ asset('dashboard/bootstrap.min.css') }}?ver={{ config('main.commit_hash') }}" rel="stylesheet">
