@@ -1066,7 +1066,7 @@ section {
 .card_element.bar-check > div {
     font-size: 14px;
     font-weight: 600;
-    padding-left: 16px;
+    padding-left: 1rem;
     position: relative;
 }
 .card_element.bar-check > div img {
@@ -1075,4 +1075,19 @@ section {
     /*position: absolute;*/
     /*left: -5px;*/
     /*top: -2px;*/
+}
+
+@media (max-width: 1080px) {
+    .card_item .card.end .card_text .card_element {
+        overflow: hidden;
+        padding: 5px 0;
+    }
+    .card_element.bar-check > div {
+        padding-left: 0;
+    }
+    .card_element.bar-check > div > div:last-child {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
 }
