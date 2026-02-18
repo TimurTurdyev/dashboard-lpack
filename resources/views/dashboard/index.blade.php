@@ -61,11 +61,11 @@
             </div>
             <div class="general_data_row">
                 <!-- general_item -->
-                <div class="general_item" data-id="3f92bfdb-72b4-11f0-a47b-e848b8c82000">
+                <div class="general_item" data-id="f3bfb75a-0a56-11f1-a4a3-e848b8c82000">
                     <div class="top">
                         <img src="{{ asset('dashboard/images/user-active.png') }}?ver={{ config('main.commit_hash') }}"
                              alt="">
-                        <div class="title">Постоянных клиентов</div>
+                        <div class="title">Потенциал</div>
                     </div>
                     <div class="bottom">
                         <div class="data" data-key="Value"></div>
@@ -73,11 +73,11 @@
                     </div>
                 </div>
                 <!-- general_item -->
-                <div class="general_item" data-id="069ce91b-72b2-11f0-a47b-e848b8c82000">
+                <div class="general_item" data-id="7c9a6b48-0a5a-11f1-a4a3-e848b8c82000">
                     <div class="top">
                         <img src="{{ asset('dashboard/images/user-info.png') }}?ver={{ config('main.commit_hash') }}"
                              alt="">
-                        <div class="title">Новых клиентов</div>
+                        <div class="title">Новый</div>
                     </div>
                     <div class="bottom">
                         <div class="data" data-key="Value"></div>
@@ -85,11 +85,47 @@
                     </div>
                 </div>
                 <!-- general_item -->
-                <div class=" general_item" data-id="e08bf8cd-72b4-11f0-a47b-e848b8c82000">
+                <div class=" general_item" data-id="8c43f4ae-0a5a-11f1-a4a3-e848b8c82000">
                     <div class="top">
                         <img src="{{ asset('dashboard/images/user-delete.png') }}?ver={{ config('main.commit_hash') }}"
                              alt="">
-                        <div class="title">Потерянных клиентов</div>
+                        <div class="title">Активный</div>
+                    </div>
+                    <div class="bottom">
+                        <div class="data" data-key="Value"></div>
+                        <div class="quantity" data-key="Additionally"></div>
+                    </div>
+                </div>
+                <!-- general_item -->
+                <div class="general_item" data-id="71bb0515-0a5b-11f1-a4a3-e848b8c82000">
+                    <div class="top">
+                        <img src="{{ asset('dashboard/images/user-active.png') }}?ver={{ config('main.commit_hash') }}"
+                             alt="">
+                        <div class="title">Отток клиентов</div>
+                    </div>
+                    <div class="bottom">
+                        <div class="data" data-key="Value"></div>
+                        <div class="quantity" data-key="Additionally"></div>
+                    </div>
+                </div>
+                <!-- general_item -->
+                <div class="general_item" data-id="3085b4a7-0a5d-11f1-a4a3-e848b8c82000">
+                    <div class="top">
+                        <img src="{{ asset('dashboard/images/user-info.png') }}?ver={{ config('main.commit_hash') }}"
+                             alt="">
+                        <div class="title">Сумма по новым</div>
+                    </div>
+                    <div class="bottom">
+                        <div class="data" data-key="Value"></div>
+                        <div class="quantity" data-key="Additionally"></div>
+                    </div>
+                </div>
+                <!-- general_item -->
+                <div class=" general_item" data-id="e26688d2-0a61-11f1-a4a3-e848b8c82000">
+                    <div class="top">
+                        <img src="{{ asset('dashboard/images/user-delete.png') }}?ver={{ config('main.commit_hash') }}"
+                             alt="">
+                        <div class="title">Сумма по старым</div>
                     </div>
                     <div class="bottom">
                         <div class="data" data-key="Value"></div>
@@ -561,8 +597,8 @@
                             <th style="width: 150px;">Создано счетов</th>
                             <th style="width: 150px;">Сумма счетов</th>
                             <th style="width: 150px;">Исходящие звонки</th>
-                            <th style="width: 150px;">Исходящие e-mails</th>
-                            <th style="width: 150px;">Сообщения в WatsApp</th>
+                            <th style="width: 150px;">Обработано заявок</th>
+                            <th style="width: 150px;">Сумма маржинальности</th>
                             <th style="width: 140px;">Конверсия, %</th>
                         </tr>
                         </thead>
