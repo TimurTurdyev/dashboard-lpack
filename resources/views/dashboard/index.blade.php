@@ -45,6 +45,13 @@
                     Дата обновления данных:
                     <span id="server-date">{{ now()->format('Y-m-d H:i:s') }}</span>
                 </div>
+                <select id="global-interval" autocomplete="off">
+                    <option value="1">1 минута</option>
+                    <option value="3">3 минуты</option>
+                    <option value="5">5 минут</option>
+                    <option value="10">10 минут</option>
+                    <option value="30">30 минут</option>
+                </select>
                 <div class="haider_name" id="haiderName">Чепурнов В.</div>
             </div>
         </div>
@@ -214,7 +221,7 @@
         </div>
     </section>
     <section>
-        <div class="container">
+        <div class="container tab-group">
             <ul class="nav nav-underline flex-nowrap overflow-x-auto mb-4">
                 <li class="nav-item" data-id="e4854dd8-163e-11f0-a461-e848b8c82000">
                     <a class="nav-link text-nowrap active"
@@ -672,7 +679,7 @@
         </div>
     </section>
     <section>
-        <div class="container">
+        <div class="container tab-group">
             <ul class="nav nav-underline flex-nowrap overflow-x-auto mb-4">
                 <li class="nav-item" data-id="c22e9e5a-a1d3-11f0-a485-e848b8c82000">
                     <a class="nav-link text-nowrap active"

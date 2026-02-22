@@ -872,5 +872,121 @@ $(document).ready(function () {
             }
         });
     }
+
+    let $intervalSelect = $('#global-interval');
+    let groups = []; // массив объектов групп табов
+
+    // Функция для сбора всех групп табов на странице
+    function initGroups() {
+        groups = [];
+        // Находим все контейнеры групп (например, с классом .tab-group)
+        $('.tab-group').each(function (groupIndex) {
+            let $group = $(this);
+            let $nav = $group.find('.nav'); // список вкладок
+            let $tabs = $nav.find('li'); // элементы li
+            let tabCount = $tabs.length;
+            let $tabLinks = $nav.find('a[data-bs-toggle="tab"]'); // ссылки на вкладки
+
+            // Сохраняем данные группы
+            let group = {
+                index: groupIndex,
+                $nav: $nav,
+                $tabs: $tabs,
+                $tabLinks: $tabLinks,
+                count: tabCount,
+                timerId: null
+            };
+
+            groups.push(group);
+            // При переключении любой вкладки в этой группе сохраняем её индекс
+            $tabLinks.on('shown.bs.tab', function (e) {
+                let $target = $(e.target);
+                let newIndex = $target.parent().index(); // индекс li
+                saveActiveTab(groupIndex, newIndex);
+            });
+        });
+    }
+
+    // Сохраняет активный индекс для конкретной группы
+    function saveActiveTab(groupIndex, tabIndex) {
+        let key = 'activeTab_' + groupIndex;
+        localStorage.setItem(key, tabIndex);
+    }
+
+    // Восстанавливает сохранённые активные вкладки для всех групп
+    function restoreActiveTabs() {
+        groups.forEach(function (group) {
+            let savedIndex = localStorage.getItem('activeTab_' + group.index);
+            if (savedIndex !== null && savedIndex < group.count) {
+                // Активируем вкладку с сохранённым индексом
+                group.$tabLinks.eq(parseInt(savedIndex, 10)).tab('show');
+            }
+        });
+    }
+
+    // Функция переключения на следующую вкладку в конкретной группе
+    function nextTab(group) {
+        let $active = group.$tabs.find('.active').parent();
+
+        if ($active.length === 0) {
+            $active = $(group.$tabs[0]);
+        }
+
+        let nextIndex = ($active.index() + 1);
+
+        if (nextIndex === group.count) {
+            nextIndex = 0;
+        }
+
+        group.$tabLinks.eq(nextIndex).tab('show');
+    }
+
+    // Запускает интервал для всех групп
+    function startAllIntervals(minutes) {
+        // Сначала очищаем все существующие таймеры
+        groups.forEach(function (group) {
+            if (group.timerId) {
+                clearInterval(group.timerId);
+                group.timerId = null;
+            }
+        });
+
+        if (minutes > 0) {
+            let ms = minutes * 1000 * 60;
+            groups.forEach(function (group) {
+                // Запускаем новый таймер для каждой группы независимо
+                group.timerId = setInterval(function () {
+                    nextTab(group);
+                }, ms);
+            });
+        }
+    }
+
+    // Инициализация групп
+    initGroups();
+
+    // Восстанавливаем сохранённый интервал (если есть)
+    let savedMinutes = localStorage.getItem('globalInterval');
+
+    if (!savedMinutes) {
+        savedMinutes = 3;
+    }
+
+    if (savedMinutes) {
+        savedMinutes = parseInt(savedMinutes, 10);
+        $intervalSelect.val(savedMinutes);
+        $intervalSelect.niceSelect('update');
+        startAllIntervals(savedMinutes);
+    }
+
+    // Восстанавливаем активные вкладки
+    restoreActiveTabs();
+
+    // Обработчик изменения селекта
+    $intervalSelect.on('change', function () {
+        let minutes = parseInt($(this).val(), 10);
+        localStorage.setItem('globalInterval', minutes);
+        startAllIntervals(minutes);
+    });
 });
 
